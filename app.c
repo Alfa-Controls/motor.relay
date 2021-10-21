@@ -4,10 +4,13 @@
 #include "mcc_generated_files/adc.h"
 #include "mcc_generated_files/pin_manager.h"
 
+/*Definitions*/
 #define L_TEMPORIZED 300
 #define L_INSTAT 800
 #define ACTUATOR_TIME 400
+#define PULSE_PERIOD 500
 
+/*Local definitions*/
 typedef enum {
     NOT_INIT,
     MONITOR,
@@ -16,19 +19,21 @@ typedef enum {
     WAITING_PULSE,
 } States;
 
+
+/*Local variables*/
 static States state = NOT_INIT;
 TimeSystem * timer;
 unsigned long long cronometer;
-
 uint16_t adcResult;
 
+/*Local functions*/
 static void adc_read() {
     adcResult = (uint16_t) ADC_GetConversionResult();
     ADC_StartConversion();
 }
 
-void tasks() {
-
+/*Interface Functions*/
+void tasks(void) {
     switch (state) {
         case NOT_INIT:
             timer = GetTimeSystemInstance();
@@ -46,10 +51,9 @@ void tasks() {
                 cronometer = timer->currentTimeMillis;
                 state = TEMPORIZ;
             }
-
             break;
         case TEMPORIZ:
-            if (timer->currentTimeMillis - cronometer > ACTUATOR_TIME)
+            if ((timer->currentTimeMillis - cronometer) > ACTUATOR_TIME)
                 state = START_PULSE;
             else if (adcResult < L_TEMPORIZED)
                 state = MONITOR;
@@ -64,14 +68,9 @@ void tasks() {
             state = WAITING_PULSE;
             break;
         case WAITING_PULSE:
-            if (timer->currentTimeMillis - cronometer > 500) {
+            if ((timer->currentTimeMillis - cronometer) > PULSE_PERIOD) {
                 RELAY_SetLow();
                 state = MONITOR;
             }
-
-
-
-
-
     }
 }

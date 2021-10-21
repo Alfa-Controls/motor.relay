@@ -1,0 +1,47 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F5 `(v ~T0 @X0 0 tf ]
+"18 ./TimeSystem.h
+[; ;./TimeSystem.h: 18:     typedef struct {
+[s S1 `uo 1 `*F5 1 ]
+[n S1 . currentTimeMillis incCurrentTimeMillis ]
+"5 TimeSystem.c
+[; ;TimeSystem.c: 5: static void incCurrentTimeMillis(void);
+[v _incCurrentTimeMillis `(v ~T0 @X0 0 sf ]
+"7 TimeSystem.c
+[; ;TimeSystem.c: 7: static TimeSystem instance = {
+[v _instance `S1 ~T0 @X0 1 s ]
+[i _instance
+:U ..
+:U ..
+-> -> -> 0 `i `o `uo
+&U _incCurrentTimeMillis
+..
+..
+]
+"15
+[; ;TimeSystem.c: 15: TimeSystem * GetTimeSystemInstance(void) {
+[v _GetTimeSystemInstance `(*S1 ~T0 @X0 1 ef ]
+{
+[e :U _GetTimeSystemInstance ]
+[f ]
+"16
+[; ;TimeSystem.c: 16:     return &instance;
+[e ) &U _instance ]
+[e $UE 2  ]
+"17
+[; ;TimeSystem.c: 17: }
+[e :UE 2 ]
+}
+"20
+[; ;TimeSystem.c: 20: static void incCurrentTimeMillis(void){
+[v _incCurrentTimeMillis `(v ~T0 @X0 1 sf ]
+{
+[e :U _incCurrentTimeMillis ]
+[f ]
+"21
+[; ;TimeSystem.c: 21:     instance.currentTimeMillis++;
+[e ++ . _instance 0 -> -> -> 1 `i `o `uo ]
+"22
+[; ;TimeSystem.c: 22: }
+[e :UE 3 ]
+}
