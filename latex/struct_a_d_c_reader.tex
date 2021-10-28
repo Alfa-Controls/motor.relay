@@ -1,0 +1,171 @@
+\hypertarget{struct_a_d_c_reader}{}\doxysection{ADCReader Struct Reference}
+\label{struct_a_d_c_reader}\index{ADCReader@{ADCReader}}
+
+
+ADC Reader structure.  
+
+
+
+
+{\ttfamily \#include $<$ADCReader.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_a_d_c_reader_a6bd95140398cc8f4b44157b17d6ba31e}{temperature}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_a_d_c_reader_aaad5615d233044464c3661481a6760cd}{current}}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_a_d_c_reader_a750d05061f61bd79c5fd621fff0801b4}{read}} )(void)
+\begin{DoxyCompactList}\small\item\em ADC Read Function. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_a_d_c_reader_a70526eb95af7b40162c92b34a7124698}{init}} )(void)
+\begin{DoxyCompactList}\small\item\em Init function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}{ADCState}} \mbox{\hyperlink{struct_a_d_c_reader_a48817fb42af91f339a78162d7777afb8}{state}}
+\item 
+uint16\+\_\+t($\ast$ \mbox{\hyperlink{struct_a_d_c_reader_ab5300de252bc24e8d3e9b8271929a7f1}{get\+Result}} )(void)
+\begin{DoxyCompactList}\small\item\em Interface function\+: get\+Result. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_a_d_c_reader_add7a7f723e4e05628b4a085321a515f8}{set\+Channel}} )(uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Interface function\+: set\+Channel. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_a_d_c_reader_a562b5e575e82f69b590c54f5ce997c64}{start\+Conversion}} )(void)
+\begin{DoxyCompactList}\small\item\em Interface function\+: start\+Conversion. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_a_d_c_reader_ad469b04a38507314886aef5ce5539480}{temp\+Channel}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_a_d_c_reader_a333d3647385800d31022defb0cd433e7}{amp\+Channel}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC Reader structure. 
+
+This structure defines the properties and functions used to read the adc driver. It was implemented to read two variables\+: Temperature and Sensor. All parameters are adjustable, including the analog channels and driver functions. The ADC Reader is a singleton object and should be created only once by the Get\+ADCReader\+Instance function. 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00045}{45}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_a_d_c_reader_a333d3647385800d31022defb0cd433e7}\label{struct_a_d_c_reader_a333d3647385800d31022defb0cd433e7}} 
+\index{ADCReader@{ADCReader}!ampChannel@{ampChannel}}
+\index{ampChannel@{ampChannel}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{ampChannel}{ampChannel}}
+{\footnotesize\ttfamily uint8\+\_\+t amp\+Channel}
+
+ADC Current Channel 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00094}{94}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_aaad5615d233044464c3661481a6760cd}\label{struct_a_d_c_reader_aaad5615d233044464c3661481a6760cd}} 
+\index{ADCReader@{ADCReader}!current@{current}}
+\index{current@{current}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily uint16\+\_\+t current}
+
+Raw current value 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00047}{47}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_ab5300de252bc24e8d3e9b8271929a7f1}\label{struct_a_d_c_reader_ab5300de252bc24e8d3e9b8271929a7f1}} 
+\index{ADCReader@{ADCReader}!getResult@{getResult}}
+\index{getResult@{getResult}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{getResult}{getResult}}
+{\footnotesize\ttfamily uint16\+\_\+t($\ast$ get\+Result) (void)}
+
+
+
+Interface function\+: get\+Result. 
+
+This function is the adc get result function, and is configurated on Get\+ADCReader\+Instance. 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00076}{76}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_a70526eb95af7b40162c92b34a7124698}\label{struct_a_d_c_reader_a70526eb95af7b40162c92b34a7124698}} 
+\index{ADCReader@{ADCReader}!init@{init}}
+\index{init@{init}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{init}{init}}
+{\footnotesize\ttfamily void($\ast$ init) (void)}
+
+
+
+Init function. 
+
+This function should be called once, after ADC Reader configuration. It will start the continuous acquisition process. 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00067}{67}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_a750d05061f61bd79c5fd621fff0801b4}\label{struct_a_d_c_reader_a750d05061f61bd79c5fd621fff0801b4}} 
+\index{ADCReader@{ADCReader}!read@{read}}
+\index{read@{read}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily void($\ast$ read) (void)}
+
+
+
+ADC Read Function. 
+
+This is a callback function for the adc driver interrupt. It will read the current conversion value, set a new conversion channel and start a new conversion. The process starts a new conversion immediately after read the driver, than it is a continuous acquisition process with the faster acquisition frequency possible for the device. 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00059}{59}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_add7a7f723e4e05628b4a085321a515f8}\label{struct_a_d_c_reader_add7a7f723e4e05628b4a085321a515f8}} 
+\index{ADCReader@{ADCReader}!setChannel@{setChannel}}
+\index{setChannel@{setChannel}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{setChannel}{setChannel}}
+{\footnotesize\ttfamily void($\ast$ set\+Channel) (uint8\+\_\+t channel)}
+
+
+
+Interface function\+: set\+Channel. 
+
+This function is the adc set channel function, and is configurated on Get\+ADCReader\+Instance. 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00084}{84}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_a562b5e575e82f69b590c54f5ce997c64}\label{struct_a_d_c_reader_a562b5e575e82f69b590c54f5ce997c64}} 
+\index{ADCReader@{ADCReader}!startConversion@{startConversion}}
+\index{startConversion@{startConversion}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{startConversion}{startConversion}}
+{\footnotesize\ttfamily void($\ast$ start\+Conversion) (void)}
+
+
+
+Interface function\+: start\+Conversion. 
+
+This function is the adc start conversion function, and is configurated on Get\+ADCReader\+Instance. 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00092}{92}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_a48817fb42af91f339a78162d7777afb8}\label{struct_a_d_c_reader_a48817fb42af91f339a78162d7777afb8}} 
+\index{ADCReader@{ADCReader}!state@{state}}
+\index{state@{state}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}{ADCState}} state}
+
+ADC State 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00068}{68}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_ad469b04a38507314886aef5ce5539480}\label{struct_a_d_c_reader_ad469b04a38507314886aef5ce5539480}} 
+\index{ADCReader@{ADCReader}!tempChannel@{tempChannel}}
+\index{tempChannel@{tempChannel}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{tempChannel}{tempChannel}}
+{\footnotesize\ttfamily uint8\+\_\+t temp\+Channel}
+
+ADC Temperature Channel 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00093}{93}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c_reader_a6bd95140398cc8f4b44157b17d6ba31e}\label{struct_a_d_c_reader_a6bd95140398cc8f4b44157b17d6ba31e}} 
+\index{ADCReader@{ADCReader}!temperature@{temperature}}
+\index{temperature@{temperature}!ADCReader@{ADCReader}}
+\doxysubsubsection{\texorpdfstring{temperature}{temperature}}
+{\footnotesize\ttfamily uint16\+\_\+t temperature}
+
+Raw temperature value 
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00046}{46}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cesar/\+MPLABXProjects/motor.\+relay/\mbox{\hyperlink{_a_d_c_reader_8h}{ADCReader.\+h}}\end{DoxyCompactItemize}

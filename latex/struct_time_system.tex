@@ -1,0 +1,60 @@
+\hypertarget{struct_time_system}{}\doxysection{Time\+System Struct Reference}
+\label{struct_time_system}\index{TimeSystem@{TimeSystem}}
+
+
+Time System structure definitions @detail This structure defines the properties and behaviors of the time control system. It also provides a variable with the current time in milliseconds.  
+
+
+
+
+{\ttfamily \#include $<$Time\+System.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}{current\+Time\+Millis}}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_time_system_a1642e3752b796bcb87ca8f6aa3aa9efd}{inc\+Current\+Time\+Millis}} )(void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Time System structure definitions @detail This structure defines the properties and behaviors of the time control system. It also provides a variable with the current time in milliseconds. 
+
+File\+: \mbox{\hyperlink{_time_system_8h}{Time\+System.\+h}} Author\+: Cesar Daltoe Berci
+
+Created on October 20, 2021, 9\+:50 PM Last Review\+: October 20, 2021, 9\+:50 PM
+
+Basic time handler utility.~\newline
+ This file provide a time counter method using a current time milliseconds variable, that should be updated by a hardware timer. 
+
+Definition at line \mbox{\hyperlink{_time_system_8h_source_l00029}{29}} of file \mbox{\hyperlink{_time_system_8h_source}{Time\+System.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}\label{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}} 
+\index{TimeSystem@{TimeSystem}!currentTimeMillis@{currentTimeMillis}}
+\index{currentTimeMillis@{currentTimeMillis}!TimeSystem@{TimeSystem}}
+\doxysubsubsection{\texorpdfstring{currentTimeMillis}{currentTimeMillis}}
+{\footnotesize\ttfamily unsigned long long current\+Time\+Millis}
+
+Current System Time in milliseconds. This variable has read only purpose, the user should never write in current\+Time\+Millis. 
+
+Definition at line \mbox{\hyperlink{_time_system_8h_source_l00035}{35}} of file \mbox{\hyperlink{_time_system_8h_source}{Time\+System.\+h}}.
+
+\mbox{\Hypertarget{struct_time_system_a1642e3752b796bcb87ca8f6aa3aa9efd}\label{struct_time_system_a1642e3752b796bcb87ca8f6aa3aa9efd}} 
+\index{TimeSystem@{TimeSystem}!incCurrentTimeMillis@{incCurrentTimeMillis}}
+\index{incCurrentTimeMillis@{incCurrentTimeMillis}!TimeSystem@{TimeSystem}}
+\doxysubsubsection{\texorpdfstring{incCurrentTimeMillis}{incCurrentTimeMillis}}
+{\footnotesize\ttfamily void($\ast$ inc\+Current\+Time\+Millis) (void)}
+
+Function to update the internal time counter. 
+
+Definition at line \mbox{\hyperlink{_time_system_8h_source_l00039}{39}} of file \mbox{\hyperlink{_time_system_8h_source}{Time\+System.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cesar/\+MPLABXProjects/motor.\+relay/\mbox{\hyperlink{_time_system_8h}{Time\+System.\+h}}\end{DoxyCompactItemize}

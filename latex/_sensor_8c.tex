@@ -1,0 +1,46 @@
+\hypertarget{_sensor_8c}{}\doxysection{C\+:/\+Users/cesar/\+MPLABXProjects/motor.relay/\+Sensor.c File Reference}
+\label{_sensor_8c}\index{C:/Users/cesar/MPLABXProjects/motor.relay/Sensor.c@{C:/Users/cesar/MPLABXProjects/motor.relay/Sensor.c}}
+{\ttfamily \#include \char`\"{}Sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Time\+System.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_sensor_8c_a81c81da12ec6efd32e4e8abfeec20ab5}{sensor\+Tasks}} (\mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} $\ast$this, uint16\+\_\+t meassure)
+\item 
+\mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} \mbox{\hyperlink{_sensor_8c_a8926be117a79c870dd57738ba09194f9}{New\+Sensor}} (uint16\+\_\+t ti, uint16\+\_\+t tt, uint16\+\_\+t tl)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_sensor_8c_a8926be117a79c870dd57738ba09194f9}\label{_sensor_8c_a8926be117a79c870dd57738ba09194f9}} 
+\index{Sensor.c@{Sensor.c}!NewSensor@{NewSensor}}
+\index{NewSensor@{NewSensor}!Sensor.c@{Sensor.c}}
+\doxysubsubsection{\texorpdfstring{NewSensor()}{NewSensor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} New\+Sensor (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{ti,  }\item[{uint16\+\_\+t}]{tt,  }\item[{uint16\+\_\+t}]{tl }\end{DoxyParamCaption})}
+
+Creates a new sensor object 
+\begin{DoxyParams}{Parameters}
+{\em ti} & Instantaneous trigger level \\
+\hline
+{\em tt} & Temporized trigger level \\
+\hline
+{\em tl} & Time to wait in temporized protection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New sensor object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_sensor_8c_source_l00047}{47}} of file \mbox{\hyperlink{_sensor_8c_source}{Sensor.\+c}}.
+
+\mbox{\Hypertarget{_sensor_8c_a81c81da12ec6efd32e4e8abfeec20ab5}\label{_sensor_8c_a81c81da12ec6efd32e4e8abfeec20ab5}} 
+\index{Sensor.c@{Sensor.c}!sensorTasks@{sensorTasks}}
+\index{sensorTasks@{sensorTasks}!Sensor.c@{Sensor.c}}
+\doxysubsubsection{\texorpdfstring{sensorTasks()}{sensorTasks()}}
+{\footnotesize\ttfamily void sensor\+Tasks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} $\ast$}]{this,  }\item[{uint16\+\_\+t}]{meassure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_sensor_8c_source_l00018}{18}} of file \mbox{\hyperlink{_sensor_8c_source}{Sensor.\+c}}.
+

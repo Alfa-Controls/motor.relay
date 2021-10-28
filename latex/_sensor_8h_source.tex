@@ -1,0 +1,40 @@
+\hypertarget{_sensor_8h_source}{}\doxysection{Sensor.\+h}
+\label{_sensor_8h_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/Sensor.h@{C:/Users/cesar/MPLABXProjects/motor.relay/Sensor.h}}
+\mbox{\hyperlink{_sensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00015}00015 \textcolor{preprocessor}{\#ifndef SENSOR\_H}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00016}00016 \textcolor{preprocessor}{\#define SENSOR\_H}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00018}00018 \textcolor{preprocessor}{\#ifdef  \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00019}00019 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00020}00020 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00021}00021 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00022}00022 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00023}00023     }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00028}\mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}{00028}}     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00029}\mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a026c9d22d3e16645f138a3b3128d452a}{00029}}         \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a026c9d22d3e16645f138a3b3128d452a}{MONITORING}}, }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00030}\mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a10015117dea20291fbdbb55190a0a29d}{00030}}         \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a10015117dea20291fbdbb55190a0a29d}{TEMPORIZED}}, }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00031}\mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a3073c523bd87d54fddf09fd7c3105797}{00031}}         \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a3073c523bd87d54fddf09fd7c3105797}{TRIP}}, }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00032}00032     \}\mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}{SensorState}};}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00048}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{00048}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{SENSOR\_TAG}} \{}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00049}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_aca39036e6cbed4dddfc9f6757a23d21d}{00049}}         \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}{SensorState}} \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_aca39036e6cbed4dddfc9f6757a23d21d}{state}}; }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00050}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a2f82492382ac01a0f6c753005d291ec6}{00050}}         uint16\_t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a2f82492382ac01a0f6c753005d291ec6}{triggerInst}};}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00051}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_aef4d145c9ac6644ce15dc40a2684c065}{00051}}         uint16\_t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_aef4d145c9ac6644ce15dc40a2684c065}{triggerTemp}};}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00052}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a0f88c4970655b81ca1c28ae0da60b386}{00052}}         uint16\_t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a0f88c4970655b81ca1c28ae0da60b386}{timeLimit}};}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00062}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a572fff6d76b21b25ab444348035f7f3f}{00062}}         void (*\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a572fff6d76b21b25ab444348035f7f3f}{tasks}})(\textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{SENSOR\_TAG}} * \textcolor{keyword}{this}, uint16\_t meassure);}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00063}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a0d5ef6f5ff388f3620c69cbcc24ccbc1}{00063}}         uint16\_t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a0d5ef6f5ff388f3620c69cbcc24ccbc1}{cronometer}};}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00064}\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a585c826f354b06771c2f37d0c8947bf7}{00064}}         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a585c826f354b06771c2f37d0c8947bf7}{trip}};}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00065}\mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{00065}}     \} \mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}};}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00075}00075     \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{Sensor}} \mbox{\hyperlink{_sensor_8h_a8926be117a79c870dd57738ba09194f9}{NewSensor}}(uint16\_t ti, uint16\_t tt, uint16\_t tl);}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00077}00077 \textcolor{preprocessor}{\#ifdef  \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00079}00079 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00081}00081 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* SENSOR\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_sensor_8h_source_l00082}00082 }
+
+\end{DoxyCode}

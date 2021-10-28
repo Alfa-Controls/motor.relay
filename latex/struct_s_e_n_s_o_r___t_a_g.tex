@@ -1,0 +1,127 @@
+\hypertarget{struct_s_e_n_s_o_r___t_a_g}{}\doxysection{SENSOR\+\_\+\+TAG Struct Reference}
+\label{struct_s_e_n_s_o_r___t_a_g}\index{SENSOR\_TAG@{SENSOR\_TAG}}
+
+
+Sensor structure definition.  
+
+
+
+
+{\ttfamily \#include $<$Sensor.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}{Sensor\+State}} \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_aca39036e6cbed4dddfc9f6757a23d21d}{state}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a2f82492382ac01a0f6c753005d291ec6}{trigger\+Inst}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_aef4d145c9ac6644ce15dc40a2684c065}{trigger\+Temp}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a0f88c4970655b81ca1c28ae0da60b386}{time\+Limit}}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a572fff6d76b21b25ab444348035f7f3f}{tasks}} )(struct \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{SENSOR\+\_\+\+TAG}} $\ast$this, uint16\+\_\+t meassure)
+\begin{DoxyCompactList}\small\item\em Main sensor tasks. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a0d5ef6f5ff388f3620c69cbcc24ccbc1}{cronometer}}
+\item 
+bool \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a585c826f354b06771c2f37d0c8947bf7}{trip}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sensor structure definition. 
+
+It provide properties and methods to handle with physical sensors used to protect a electrical motor. These sensors have two protective regions\+: Instantaneous trip and temporized trip. In instantaneous monitoring, a trip event will be generated after a sensor raw value get higher than the trigger level. In temporized monitoring, it will wait a specified time after reach the trigger level before start a trip.~\newline
+ This structure methods requires \mbox{\hyperlink{_time_system_8h}{Time\+System.\+h}} to provide the current\+Time\+Millis. 
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00048}{48}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_s_e_n_s_o_r___t_a_g_a0d5ef6f5ff388f3620c69cbcc24ccbc1}\label{struct_s_e_n_s_o_r___t_a_g_a0d5ef6f5ff388f3620c69cbcc24ccbc1}} 
+\index{SENSOR\_TAG@{SENSOR\_TAG}!cronometer@{cronometer}}
+\index{cronometer@{cronometer}!SENSOR\_TAG@{SENSOR\_TAG}}
+\doxysubsubsection{\texorpdfstring{cronometer}{cronometer}}
+{\footnotesize\ttfamily uint16\+\_\+t cronometer}
+
+Cronometer utilized to meassure time 
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00063}{63}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+\mbox{\Hypertarget{struct_s_e_n_s_o_r___t_a_g_aca39036e6cbed4dddfc9f6757a23d21d}\label{struct_s_e_n_s_o_r___t_a_g_aca39036e6cbed4dddfc9f6757a23d21d}} 
+\index{SENSOR\_TAG@{SENSOR\_TAG}!state@{state}}
+\index{state@{state}!SENSOR\_TAG@{SENSOR\_TAG}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}{Sensor\+State}} state}
+
+State of the sensor 
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00049}{49}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+\mbox{\Hypertarget{struct_s_e_n_s_o_r___t_a_g_a572fff6d76b21b25ab444348035f7f3f}\label{struct_s_e_n_s_o_r___t_a_g_a572fff6d76b21b25ab444348035f7f3f}} 
+\index{SENSOR\_TAG@{SENSOR\_TAG}!tasks@{tasks}}
+\index{tasks@{tasks}!SENSOR\_TAG@{SENSOR\_TAG}}
+\doxysubsubsection{\texorpdfstring{tasks}{tasks}}
+{\footnotesize\ttfamily void($\ast$ tasks) (struct \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{SENSOR\+\_\+\+TAG}} $\ast$this, uint16\+\_\+t meassure)}
+
+
+
+Main sensor tasks. 
+
+This function should be called frequently to maintain the monitoring status. 
+\begin{DoxyParams}{Parameters}
+{\em this} & A pointer to this structure \\
+\hline
+{\em meassure} & The raw value of the sensor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00062}{62}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+\mbox{\Hypertarget{struct_s_e_n_s_o_r___t_a_g_a0f88c4970655b81ca1c28ae0da60b386}\label{struct_s_e_n_s_o_r___t_a_g_a0f88c4970655b81ca1c28ae0da60b386}} 
+\index{SENSOR\_TAG@{SENSOR\_TAG}!timeLimit@{timeLimit}}
+\index{timeLimit@{timeLimit}!SENSOR\_TAG@{SENSOR\_TAG}}
+\doxysubsubsection{\texorpdfstring{timeLimit}{timeLimit}}
+{\footnotesize\ttfamily uint16\+\_\+t time\+Limit}
+
+Time to wait in temporized protection 
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00052}{52}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+\mbox{\Hypertarget{struct_s_e_n_s_o_r___t_a_g_a2f82492382ac01a0f6c753005d291ec6}\label{struct_s_e_n_s_o_r___t_a_g_a2f82492382ac01a0f6c753005d291ec6}} 
+\index{SENSOR\_TAG@{SENSOR\_TAG}!triggerInst@{triggerInst}}
+\index{triggerInst@{triggerInst}!SENSOR\_TAG@{SENSOR\_TAG}}
+\doxysubsubsection{\texorpdfstring{triggerInst}{triggerInst}}
+{\footnotesize\ttfamily uint16\+\_\+t trigger\+Inst}
+
+Instantaneous trigger level 
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00050}{50}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+\mbox{\Hypertarget{struct_s_e_n_s_o_r___t_a_g_aef4d145c9ac6644ce15dc40a2684c065}\label{struct_s_e_n_s_o_r___t_a_g_aef4d145c9ac6644ce15dc40a2684c065}} 
+\index{SENSOR\_TAG@{SENSOR\_TAG}!triggerTemp@{triggerTemp}}
+\index{triggerTemp@{triggerTemp}!SENSOR\_TAG@{SENSOR\_TAG}}
+\doxysubsubsection{\texorpdfstring{triggerTemp}{triggerTemp}}
+{\footnotesize\ttfamily uint16\+\_\+t trigger\+Temp}
+
+Temporized trigger level 
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00051}{51}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+\mbox{\Hypertarget{struct_s_e_n_s_o_r___t_a_g_a585c826f354b06771c2f37d0c8947bf7}\label{struct_s_e_n_s_o_r___t_a_g_a585c826f354b06771c2f37d0c8947bf7}} 
+\index{SENSOR\_TAG@{SENSOR\_TAG}!trip@{trip}}
+\index{trip@{trip}!SENSOR\_TAG@{SENSOR\_TAG}}
+\doxysubsubsection{\texorpdfstring{trip}{trip}}
+{\footnotesize\ttfamily bool trip}
+
+Trip signal 
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00064}{64}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cesar/\+MPLABXProjects/motor.\+relay/\mbox{\hyperlink{_sensor_8h}{Sensor.\+h}}\end{DoxyCompactItemize}

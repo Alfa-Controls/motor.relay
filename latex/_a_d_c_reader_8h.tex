@@ -1,0 +1,86 @@
+\hypertarget{_a_d_c_reader_8h}{}\doxysection{C\+:/\+Users/cesar/\+MPLABXProjects/motor.relay/\+ADCReader.h File Reference}
+\label{_a_d_c_reader_8h}\index{C:/Users/cesar/MPLABXProjects/motor.relay/ADCReader.h@{C:/Users/cesar/MPLABXProjects/motor.relay/ADCReader.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}}
+\begin{DoxyCompactList}\small\item\em ADC Reader structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}{ADCState}} \{ \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498acd1a3d1da76e84df5f360763e2fddfe8}{ADC\+\_\+\+READING\+\_\+\+TEMP}}
+, \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498adc7de4c109792a7828b12755739e7163}{ADC\+\_\+\+READING\+\_\+\+CURRENT}}
+ \}
+\begin{DoxyCompactList}\small\item\em ADC Interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}} $\ast$ \mbox{\hyperlink{_a_d_c_reader_8h_a9308a2d59755ec3afd468921fd211695}{Get\+ADCReader\+Instance}} (uint16\+\_\+t($\ast$get\+Result)(void), void($\ast$set\+Channel)(uint8\+\_\+t channel), void($\ast$start)(void), uint8\+\_\+t teC, uint8\+\_\+t amC)
+\begin{DoxyCompactList}\small\item\em Get the adc reader unique instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}\label{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}} 
+\index{ADCReader.h@{ADCReader.h}!ADCState@{ADCState}}
+\index{ADCState@{ADCState}!ADCReader.h@{ADCReader.h}}
+\doxysubsubsection{\texorpdfstring{ADCState}{ADCState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}{ADCState}}}
+
+
+
+ADC Interface. 
+
+File\+: \mbox{\hyperlink{_a_d_c_reader_8h}{ADCReader.\+h}} Author\+: Cesar Daltoe Berci
+
+Created on October 28, 2021, 6\+:49 AM Version 1.\+0 Last review on October 28, 2021, 08\+:37 AM
+
+This is the ADC abstraction and interfacing file. It will provide a structure and methods to handle with the adc hardware using continuous acquisition. Analog driver state definition \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_READING\_TEMP@{ADC\_READING\_TEMP}!ADCReader.h@{ADCReader.h}}\index{ADCReader.h@{ADCReader.h}!ADC\_READING\_TEMP@{ADC\_READING\_TEMP}}}\mbox{\Hypertarget{_a_d_c_reader_8h_aa670525874104c3147352e908d170498acd1a3d1da76e84df5f360763e2fddfe8}\label{_a_d_c_reader_8h_aa670525874104c3147352e908d170498acd1a3d1da76e84df5f360763e2fddfe8}} 
+ADC\+\_\+\+READING\+\_\+\+TEMP&Reading temperature sensor \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_READING\_CURRENT@{ADC\_READING\_CURRENT}!ADCReader.h@{ADCReader.h}}\index{ADCReader.h@{ADCReader.h}!ADC\_READING\_CURRENT@{ADC\_READING\_CURRENT}}}\mbox{\Hypertarget{_a_d_c_reader_8h_aa670525874104c3147352e908d170498adc7de4c109792a7828b12755739e7163}\label{_a_d_c_reader_8h_aa670525874104c3147352e908d170498adc7de4c109792a7828b12755739e7163}} 
+ADC\+\_\+\+READING\+\_\+\+CURRENT&Reading current sensor \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8h_source_l00029}{29}} of file \mbox{\hyperlink{_a_d_c_reader_8h_source}{ADCReader.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_a_d_c_reader_8h_a9308a2d59755ec3afd468921fd211695}\label{_a_d_c_reader_8h_a9308a2d59755ec3afd468921fd211695}} 
+\index{ADCReader.h@{ADCReader.h}!GetADCReaderInstance@{GetADCReaderInstance}}
+\index{GetADCReaderInstance@{GetADCReaderInstance}!ADCReader.h@{ADCReader.h}}
+\doxysubsubsection{\texorpdfstring{GetADCReaderInstance()}{GetADCReaderInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}} $\ast$ Get\+ADCReader\+Instance (\begin{DoxyParamCaption}\item[{uint16\+\_\+t($\ast$)(void)}]{get\+Result,  }\item[{void($\ast$)(uint8\+\_\+t channel)}]{set\+Channel,  }\item[{void($\ast$)(void)}]{start,  }\item[{uint8\+\_\+t}]{teC,  }\item[{uint8\+\_\+t}]{amC }\end{DoxyParamCaption})}
+
+
+
+Get the adc reader unique instance. 
+
+This method is part of the implementation of a Singleton like pattern.~\newline
+ Should be only one instance of the ADC reader on the project, created with this function.~\newline
+ The ADC Read object is a abstraction used to interface the main program with the hardware routines used to access the adc driver. 
+\begin{DoxyParams}{Parameters}
+{\em get\+Result} & Hardware function to read ADC conversion result \\
+\hline
+{\em set\+Channel} & Hardware function to set ADC conversion channel \\
+\hline
+{\em start} & Hardware function to start ADC conversion \\
+\hline
+{\em teC} & ADC channel to read temperature \\
+\hline
+{\em amC} & ADC channel to read current \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ADC Reader object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8c_source_l00023}{23}} of file \mbox{\hyperlink{_a_d_c_reader_8c_source}{ADCReader.\+c}}.
+

@@ -1,0 +1,43 @@
+\hypertarget{_a_d_c_reader_8h_source}{}\doxysection{ADCReader.\+h}
+\label{_a_d_c_reader_8h_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/ADCReader.h@{C:/Users/cesar/MPLABXProjects/motor.relay/ADCReader.h}}
+\mbox{\hyperlink{_a_d_c_reader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00017}00017 \textcolor{preprocessor}{\#ifndef ADCREADER\_H}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00018}00018 \textcolor{preprocessor}{\#define ADCREADER\_H}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00020}00020 \textcolor{preprocessor}{\#ifdef  \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00021}00021 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00022}00022 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00023}00023     }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00024}00024 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00029}\mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}{00029}}     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00030}\mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498acd1a3d1da76e84df5f360763e2fddfe8}{00030}}         \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498acd1a3d1da76e84df5f360763e2fddfe8}{ADC\_READING\_TEMP}}, }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00031}\mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498adc7de4c109792a7828b12755739e7163}{00031}}         \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498adc7de4c109792a7828b12755739e7163}{ADC\_READING\_CURRENT}}, }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00032}00032     \}\mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}{ADCState}};}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00045}\mbox{\hyperlink{struct_a_d_c_reader}{00045}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00046}\mbox{\hyperlink{struct_a_d_c_reader_a6bd95140398cc8f4b44157b17d6ba31e}{00046}}         uint16\_t \mbox{\hyperlink{struct_a_d_c_reader_a6bd95140398cc8f4b44157b17d6ba31e}{temperature}}; }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00047}\mbox{\hyperlink{struct_a_d_c_reader_aaad5615d233044464c3661481a6760cd}{00047}}         uint16\_t \mbox{\hyperlink{struct_a_d_c_reader_aaad5615d233044464c3661481a6760cd}{current}}; }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00059}\mbox{\hyperlink{struct_a_d_c_reader_a750d05061f61bd79c5fd621fff0801b4}{00059}}         void (*read)(void); }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00067}\mbox{\hyperlink{struct_a_d_c_reader_a70526eb95af7b40162c92b34a7124698}{00067}}         void (*init)(void);}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00068}\mbox{\hyperlink{struct_a_d_c_reader_a48817fb42af91f339a78162d7777afb8}{00068}}         \mbox{\hyperlink{_a_d_c_reader_8h_aa670525874104c3147352e908d170498}{ADCState}} \mbox{\hyperlink{struct_a_d_c_reader_a48817fb42af91f339a78162d7777afb8}{state}}; }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00076}\mbox{\hyperlink{struct_a_d_c_reader_ab5300de252bc24e8d3e9b8271929a7f1}{00076}}         uint16\_t (*getResult)(void); }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00084}\mbox{\hyperlink{struct_a_d_c_reader_add7a7f723e4e05628b4a085321a515f8}{00084}}         void (*setChannel)(uint8\_t channel);}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00092}\mbox{\hyperlink{struct_a_d_c_reader_a562b5e575e82f69b590c54f5ce997c64}{00092}}         void (*startConversion)(void);}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00093}\mbox{\hyperlink{struct_a_d_c_reader_ad469b04a38507314886aef5ce5539480}{00093}}         uint8\_t \mbox{\hyperlink{struct_a_d_c_reader_ad469b04a38507314886aef5ce5539480}{tempChannel}}; }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00094}\mbox{\hyperlink{struct_a_d_c_reader_a333d3647385800d31022defb0cd433e7}{00094}}         uint8\_t \mbox{\hyperlink{struct_a_d_c_reader_a333d3647385800d31022defb0cd433e7}{ampChannel}}; }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00095}00095     \}\mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}};}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00113}00113     \mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}} * \mbox{\hyperlink{_a_d_c_reader_8h_a9308a2d59755ec3afd468921fd211695}{GetADCReaderInstance}}(uint16\_t (*getResult)(\textcolor{keywordtype}{void}), \textcolor{keywordtype}{void} (*setChannel)(uint8\_t channel),  \textcolor{keywordtype}{void} (*start)(\textcolor{keywordtype}{void}), uint8\_t teC, uint8\_t amC);}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00114}00114     }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00116}00116 \textcolor{preprocessor}{\#ifdef  \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00117}00117 \}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00118}00118 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00120}00120 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* ADCREADER\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_a_d_c_reader_8h_source_l00121}00121 }
+
+\end{DoxyCode}

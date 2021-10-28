@@ -1,0 +1,120 @@
+\hypertarget{app_8c}{}\doxysection{C\+:/\+Users/cesar/\+MPLABXProjects/motor.relay/app.c File Reference}
+\label{app_8c}\index{C:/Users/cesar/MPLABXProjects/motor.relay/app.c@{C:/Users/cesar/MPLABXProjects/motor.relay/app.c}}
+{\ttfamily \#include \char`\"{}app.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Time\+System.\+h\char`\"{}}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444}{States}} \{ \newline
+\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a9aa925bc1a8429e54310c03c882df4a3}{NOT\+\_\+\+INIT}}
+, \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}}
+, \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444afed420ae8f5629096d56bd7adb2237a6}{START\+\_\+\+PULSE}}
+, \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a3d624565bc3c72395d19720f7bfb4cf8}{WAITING\+\_\+\+PULSE}}
+, \newline
+\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a1c74a38a3f14391c7c65654aeb51061e}{WAITING\+\_\+\+DEAD\+\_\+\+TIME}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_8c_abf4510e1aba7b08f11d447c2b530d661}{tasks}} (void)
+\begin{DoxyCompactList}\small\item\em Main system tasks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} \mbox{\hyperlink{app_8c_aee0220efe7515a6f756228d2f70c3ed9}{temperature\+Sensor}}
+\item 
+\mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} \mbox{\hyperlink{app_8c_a856219327c862a102627a90b11b581c1}{amp\+Sensor}}
+\item 
+\mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}} $\ast$ \mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{adc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{app_8c_a808e5cd4979462d3bbe3070d7d147444}\label{app_8c_a808e5cd4979462d3bbe3070d7d147444}} 
+\index{app.c@{app.c}!States@{States}}
+\index{States@{States}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{States}{States}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444}{States}}}
+
+Main system states \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_INIT@{NOT\_INIT}!app.c@{app.c}}\index{app.c@{app.c}!NOT\_INIT@{NOT\_INIT}}}\mbox{\Hypertarget{app_8c_a808e5cd4979462d3bbe3070d7d147444a9aa925bc1a8429e54310c03c882df4a3}\label{app_8c_a808e5cd4979462d3bbe3070d7d147444a9aa925bc1a8429e54310c03c882df4a3}} 
+NOT\+\_\+\+INIT&Not initiated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONITOR@{MONITOR}!app.c@{app.c}}\index{app.c@{app.c}!MONITOR@{MONITOR}}}\mbox{\Hypertarget{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}\label{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}} 
+MONITOR&Monitoring sensors \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START\_PULSE@{START\_PULSE}!app.c@{app.c}}\index{app.c@{app.c}!START\_PULSE@{START\_PULSE}}}\mbox{\Hypertarget{app_8c_a808e5cd4979462d3bbe3070d7d147444afed420ae8f5629096d56bd7adb2237a6}\label{app_8c_a808e5cd4979462d3bbe3070d7d147444afed420ae8f5629096d56bd7adb2237a6}} 
+START\+\_\+\+PULSE&Starting trigger pulse \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_PULSE@{WAITING\_PULSE}!app.c@{app.c}}\index{app.c@{app.c}!WAITING\_PULSE@{WAITING\_PULSE}}}\mbox{\Hypertarget{app_8c_a808e5cd4979462d3bbe3070d7d147444a3d624565bc3c72395d19720f7bfb4cf8}\label{app_8c_a808e5cd4979462d3bbe3070d7d147444a3d624565bc3c72395d19720f7bfb4cf8}} 
+WAITING\+\_\+\+PULSE&Waiting for trigger pulse \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_DEAD\_TIME@{WAITING\_DEAD\_TIME}!app.c@{app.c}}\index{app.c@{app.c}!WAITING\_DEAD\_TIME@{WAITING\_DEAD\_TIME}}}\mbox{\Hypertarget{app_8c_a808e5cd4979462d3bbe3070d7d147444a1c74a38a3f14391c7c65654aeb51061e}\label{app_8c_a808e5cd4979462d3bbe3070d7d147444a1c74a38a3f14391c7c65654aeb51061e}} 
+WAITING\+\_\+\+DEAD\+\_\+\+TIME&Wainting for dead time \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{app_8c_source_l00038}{38}} of file \mbox{\hyperlink{app_8c_source}{app.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{app_8c_abf4510e1aba7b08f11d447c2b530d661}\label{app_8c_abf4510e1aba7b08f11d447c2b530d661}} 
+\index{app.c@{app.c}!tasks@{tasks}}
+\index{tasks@{tasks}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{tasks()}{tasks()}}
+{\footnotesize\ttfamily void tasks (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main system tasks. 
+
+This function controls the main system state. 
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{app_8c_source_l00066}{66}} of file \mbox{\hyperlink{app_8c_source}{app.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{app_8c_ab279defc3aafe293386fe494a1c1bc85}\label{app_8c_ab279defc3aafe293386fe494a1c1bc85}} 
+\index{app.c@{app.c}!adc@{adc}}
+\index{adc@{adc}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{adc}{adc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}}$\ast$ adc}
+
+ADC Reader object 
+
+Definition at line \mbox{\hyperlink{app_8c_source_l00054}{54}} of file \mbox{\hyperlink{app_8c_source}{app.\+c}}.
+
+\mbox{\Hypertarget{app_8c_a856219327c862a102627a90b11b581c1}\label{app_8c_a856219327c862a102627a90b11b581c1}} 
+\index{app.c@{app.c}!ampSensor@{ampSensor}}
+\index{ampSensor@{ampSensor}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{ampSensor}{ampSensor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} amp\+Sensor}
+
+Current Sensor 
+
+Definition at line \mbox{\hyperlink{app_8c_source_l00053}{53}} of file \mbox{\hyperlink{app_8c_source}{app.\+c}}.
+
+\mbox{\Hypertarget{app_8c_aee0220efe7515a6f756228d2f70c3ed9}\label{app_8c_aee0220efe7515a6f756228d2f70c3ed9}} 
+\index{app.c@{app.c}!temperatureSensor@{temperatureSensor}}
+\index{temperatureSensor@{temperatureSensor}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{temperatureSensor}{temperatureSensor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} temperature\+Sensor}
+
+Temperature Sensor 
+
+Definition at line \mbox{\hyperlink{app_8c_source_l00052}{52}} of file \mbox{\hyperlink{app_8c_source}{app.\+c}}.
+

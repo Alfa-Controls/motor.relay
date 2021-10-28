@@ -1,0 +1,62 @@
+\hypertarget{main_8c_source}{}\doxysection{main.\+c}
+\label{main_8c_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/main.c@{C:/Users/cesar/MPLABXProjects/motor.relay/main.c}}
+\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022 \textcolor{comment}{    (c) 2018 Microchip Technology Inc. and its subsidiaries. }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024 \textcolor{comment}{    Subject to your compliance with these terms, you may use Microchip software and any }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025 \textcolor{comment}{    derivatives exclusively with Microchip products. It is your responsibility to comply with third party }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026 \textcolor{comment}{    license terms applicable to your use of third party software (including open source software) that }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027 \textcolor{comment}{    may accompany Microchip software.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029 \textcolor{comment}{    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}AS IS"{}. NO WARRANTIES, WHETHER }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030 \textcolor{comment}{    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031 \textcolor{comment}{    IMPLIED WARRANTIES OF NON-\/INFRINGEMENT, MERCHANTABILITY, AND FITNESS }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032 \textcolor{comment}{    FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034 \textcolor{comment}{    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035 \textcolor{comment}{    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036 \textcolor{comment}{    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037 \textcolor{comment}{    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038 \textcolor{comment}{    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00039}00039 \textcolor{comment}{    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00040}00040 \textcolor{comment}{    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00041}00041 \textcolor{comment}{    SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}00042 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mcc_8h}{mcc\_generated\_files/mcc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{app_8h}{app.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048 \textcolor{comment}{                         Main application}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}\mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{00050}} \textcolor{keywordtype}{void} \mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051 \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052     \textcolor{comment}{// initialize the device}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053     \mbox{\hyperlink{mcc_8c_a5e8391114a0cf91ac20002be25e3d352}{SYSTEM\_Initialize}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055     \textcolor{comment}{// When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00056}00056     \textcolor{comment}{// Use the following macros to:}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00058}00058     \textcolor{comment}{// Enable the Global Interrupts}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00059}00059     \mbox{\hyperlink{interrupt__manager_8h_ab801e88ce18e2d200429ffbaa67dbf2b}{INTERRUPT\_GlobalInterruptEnable}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00061}00061     \textcolor{comment}{// Enable the Peripheral Interrupts}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00062}00062     \mbox{\hyperlink{interrupt__manager_8h_a35865b73bdecc073d43ad4e0c62187ea}{INTERRUPT\_PeripheralInterruptEnable}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00064}00064     \textcolor{comment}{// Disable the Global Interrupts}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00065}00065     \textcolor{comment}{//INTERRUPT\_GlobalInterruptDisable();}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00067}00067     \textcolor{comment}{// Disable the Peripheral Interrupts}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00068}00068     \textcolor{comment}{//INTERRUPT\_PeripheralInterruptDisable();}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00070}00070     \textcolor{keywordflow}{while} (1)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00072}00072         \mbox{\hyperlink{app_8c_abf4510e1aba7b08f11d447c2b530d661}{tasks}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00073}00073         \textcolor{comment}{// Add your application code}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00075}00075 \}}
+
+\end{DoxyCode}

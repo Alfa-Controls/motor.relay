@@ -1,0 +1,44 @@
+\hypertarget{_a_d_c_reader_8c}{}\doxysection{C\+:/\+Users/cesar/\+MPLABXProjects/motor.relay/\+ADCReader.c File Reference}
+\label{_a_d_c_reader_8c}\index{C:/Users/cesar/MPLABXProjects/motor.relay/ADCReader.c@{C:/Users/cesar/MPLABXProjects/motor.relay/ADCReader.c}}
+{\ttfamily \#include \char`\"{}ADCReader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mcc\+\_\+generated\+\_\+files/adc.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}} $\ast$ \mbox{\hyperlink{_a_d_c_reader_8c_a9308a2d59755ec3afd468921fd211695}{Get\+ADCReader\+Instance}} (uint16\+\_\+t($\ast$get\+Result)(void), void($\ast$set\+Channel)(uint8\+\_\+t channel), void($\ast$start)(void), uint8\+\_\+t teC, uint8\+\_\+t amC)
+\begin{DoxyCompactList}\small\item\em Get the adc reader unique instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_a_d_c_reader_8c_a9308a2d59755ec3afd468921fd211695}\label{_a_d_c_reader_8c_a9308a2d59755ec3afd468921fd211695}} 
+\index{ADCReader.c@{ADCReader.c}!GetADCReaderInstance@{GetADCReaderInstance}}
+\index{GetADCReaderInstance@{GetADCReaderInstance}!ADCReader.c@{ADCReader.c}}
+\doxysubsubsection{\texorpdfstring{GetADCReaderInstance()}{GetADCReaderInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}} $\ast$ Get\+ADCReader\+Instance (\begin{DoxyParamCaption}\item[{uint16\+\_\+t($\ast$)(void)}]{get\+Result,  }\item[{void($\ast$)(uint8\+\_\+t channel)}]{set\+Channel,  }\item[{void($\ast$)(void)}]{start,  }\item[{uint8\+\_\+t}]{teC,  }\item[{uint8\+\_\+t}]{amC }\end{DoxyParamCaption})}
+
+
+
+Get the adc reader unique instance. 
+
+This method is part of the implementation of a Singleton like pattern.~\newline
+ Should be only one instance of the ADC reader on the project, created with this function.~\newline
+ The ADC Read object is a abstraction used to interface the main program with the hardware routines used to access the adc driver. 
+\begin{DoxyParams}{Parameters}
+{\em get\+Result} & Hardware function to read ADC conversion result \\
+\hline
+{\em set\+Channel} & Hardware function to set ADC conversion channel \\
+\hline
+{\em start} & Hardware function to start ADC conversion \\
+\hline
+{\em teC} & ADC channel to read temperature \\
+\hline
+{\em amC} & ADC channel to read current \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ADC Reader object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_a_d_c_reader_8c_source_l00023}{23}} of file \mbox{\hyperlink{_a_d_c_reader_8c_source}{ADCReader.\+c}}.
+

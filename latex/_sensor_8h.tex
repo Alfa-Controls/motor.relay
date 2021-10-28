@@ -1,0 +1,104 @@
+\hypertarget{_sensor_8h}{}\doxysection{C\+:/\+Users/cesar/\+MPLABXProjects/motor.relay/\+Sensor.h File Reference}
+\label{_sensor_8h}\index{C:/Users/cesar/MPLABXProjects/motor.relay/Sensor.h@{C:/Users/cesar/MPLABXProjects/motor.relay/Sensor.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{SENSOR\+\_\+\+TAG}}
+\begin{DoxyCompactList}\small\item\em Sensor structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{SENSOR\+\_\+\+TAG}} \mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}}
+\begin{DoxyCompactList}\small\item\em Sensor structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}{Sensor\+State}} \{ \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a026c9d22d3e16645f138a3b3128d452a}{MONITORING}}
+, \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a10015117dea20291fbdbb55190a0a29d}{TEMPORIZED}}
+, \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a3073c523bd87d54fddf09fd7c3105797}{TRIP}}
+ \}
+\begin{DoxyCompactList}\small\item\em Sensor state definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} \mbox{\hyperlink{_sensor_8h_a8926be117a79c870dd57738ba09194f9}{New\+Sensor}} (uint16\+\_\+t ti, uint16\+\_\+t tt, uint16\+\_\+t tl)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}\label{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}} 
+\index{Sensor.h@{Sensor.h}!Sensor@{Sensor}}
+\index{Sensor@{Sensor}!Sensor.h@{Sensor.h}}
+\doxysubsubsection{\texorpdfstring{Sensor}{Sensor}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{SENSOR\+\_\+\+TAG}} \mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}}}
+
+
+
+Sensor structure definition. 
+
+It provide properties and methods to handle with physical sensors used to protect a electrical motor. These sensors have two protective regions\+: Instantaneous trip and temporized trip. In instantaneous monitoring, a trip event will be generated after a sensor raw value get higher than the trigger level. In temporized monitoring, it will wait a specified time after reach the trigger level before start a trip.~\newline
+ This structure methods requires \mbox{\hyperlink{_time_system_8h}{Time\+System.\+h}} to provide the current\+Time\+Millis. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}\label{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}} 
+\index{Sensor.h@{Sensor.h}!SensorState@{SensorState}}
+\index{SensorState@{SensorState}!Sensor.h@{Sensor.h}}
+\doxysubsubsection{\texorpdfstring{SensorState}{SensorState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00}{Sensor\+State}}}
+
+
+
+Sensor state definition ~\newline
+ 
+
+File\+: \mbox{\hyperlink{_sensor_8h}{Sensor.\+h}} Author\+: Cesar Daltoe Berci
+
+Created on October 27, 2021, 9\+:57 PM Version 1.\+0 Last Review\+: October 27, 2021, 9\+:57 PM
+
+This file provides methods and variables to control sensors measures.~\newline
+ The subject is to protect a electrical motor, providing instantaneous and temporized protections using one or more sensors. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONITORING@{MONITORING}!Sensor.h@{Sensor.h}}\index{Sensor.h@{Sensor.h}!MONITORING@{MONITORING}}}\mbox{\Hypertarget{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a026c9d22d3e16645f138a3b3128d452a}\label{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a026c9d22d3e16645f138a3b3128d452a}} 
+MONITORING&Monitoring the raw values, running in normal mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPORIZED@{TEMPORIZED}!Sensor.h@{Sensor.h}}\index{Sensor.h@{Sensor.h}!TEMPORIZED@{TEMPORIZED}}}\mbox{\Hypertarget{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a10015117dea20291fbdbb55190a0a29d}\label{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a10015117dea20291fbdbb55190a0a29d}} 
+TEMPORIZED&Running in temporized fault monitoring \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TRIP@{TRIP}!Sensor.h@{Sensor.h}}\index{Sensor.h@{Sensor.h}!TRIP@{TRIP}}}\mbox{\Hypertarget{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a3073c523bd87d54fddf09fd7c3105797}\label{_sensor_8h_a4e26684045a9059b9df2181c65cf2a00a3073c523bd87d54fddf09fd7c3105797}} 
+TRIP&Fault trip \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sensor_8h_source_l00028}{28}} of file \mbox{\hyperlink{_sensor_8h_source}{Sensor.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_sensor_8h_a8926be117a79c870dd57738ba09194f9}\label{_sensor_8h_a8926be117a79c870dd57738ba09194f9}} 
+\index{Sensor.h@{Sensor.h}!NewSensor@{NewSensor}}
+\index{NewSensor@{NewSensor}!Sensor.h@{Sensor.h}}
+\doxysubsubsection{\texorpdfstring{NewSensor()}{NewSensor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sensor_8h_a2b8a5ffdf7e46438537bb3b1d677ad6c}{Sensor}} New\+Sensor (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{ti,  }\item[{uint16\+\_\+t}]{tt,  }\item[{uint16\+\_\+t}]{tl }\end{DoxyParamCaption})}
+
+Creates a new sensor object 
+\begin{DoxyParams}{Parameters}
+{\em ti} & Instantaneous trigger level \\
+\hline
+{\em tt} & Temporized trigger level \\
+\hline
+{\em tl} & Time to wait in temporized protection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New sensor object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_sensor_8c_source_l00047}{47}} of file \mbox{\hyperlink{_sensor_8c_source}{Sensor.\+c}}.
+

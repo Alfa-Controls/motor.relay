@@ -1,0 +1,105 @@
+\hypertarget{pin__manager_8h_source}{}\doxysection{pin\+\_\+manager.\+h}
+\label{pin__manager_8h_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/mcc\_generated\_files/pin\_manager.h@{C:/Users/cesar/MPLABXProjects/motor.relay/mcc\_generated\_files/pin\_manager.h}}
+\mbox{\hyperlink{pin__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00024}00024 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00025}00025 \textcolor{comment}{    (c) 2018 Microchip Technology Inc. and its subsidiaries. }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00026}00026 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00027}00027 \textcolor{comment}{    Subject to your compliance with these terms, you may use Microchip software and any }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00028}00028 \textcolor{comment}{    derivatives exclusively with Microchip products. It is your responsibility to comply with third party }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00029}00029 \textcolor{comment}{    license terms applicable to your use of third party software (including open source software) that }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00030}00030 \textcolor{comment}{    may accompany Microchip software.}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00031}00031 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00032}00032 \textcolor{comment}{    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}AS IS"{}. NO WARRANTIES, WHETHER }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00033}00033 \textcolor{comment}{    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00034}00034 \textcolor{comment}{    IMPLIED WARRANTIES OF NON-\/INFRINGEMENT, MERCHANTABILITY, AND FITNESS }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00035}00035 \textcolor{comment}{    FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00036}00036 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00037}00037 \textcolor{comment}{    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00038}00038 \textcolor{comment}{    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00039}00039 \textcolor{comment}{    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00040}00040 \textcolor{comment}{    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00041}00041 \textcolor{comment}{    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00042}00042 \textcolor{comment}{    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00043}00043 \textcolor{comment}{    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00044}00044 \textcolor{comment}{    SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00045}00045 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00047}00047 \textcolor{preprocessor}{\#ifndef PIN\_MANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00048}00048 \textcolor{preprocessor}{\#define PIN\_MANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00054}00054 \textcolor{preprocessor}{\#include <xc.h>}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00056}\mbox{\hyperlink{pin__manager_8h_a1bb283bd7893b9855e2f23013891fc82}{00056}} \textcolor{preprocessor}{\#define INPUT   1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00057}\mbox{\hyperlink{pin__manager_8h_a61a3c9a18380aafb6e430e79bf596557}{00057}} \textcolor{preprocessor}{\#define OUTPUT  0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00059}\mbox{\hyperlink{pin__manager_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{00059}} \textcolor{preprocessor}{\#define HIGH    1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00060}\mbox{\hyperlink{pin__manager_8h_ab811d8c6ff3a505312d3276590444289}{00060}} \textcolor{preprocessor}{\#define LOW     0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00062}\mbox{\hyperlink{pin__manager_8h_ad42aa2404559d4a465d5d45e857f2881}{00062}} \textcolor{preprocessor}{\#define ANALOG      1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00063}\mbox{\hyperlink{pin__manager_8h_a5e3f0ed2799c1275891b863e4b8c89eb}{00063}} \textcolor{preprocessor}{\#define DIGITAL     0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00065}\mbox{\hyperlink{pin__manager_8h_a2556d56311dd94f5834ef8fb4e6d875d}{00065}} \textcolor{preprocessor}{\#define PULL\_UP\_ENABLED      1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00066}\mbox{\hyperlink{pin__manager_8h_aa2df433ea6e6c6cd49babd945e27315e}{00066}} \textcolor{preprocessor}{\#define PULL\_UP\_DISABLED     0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00068}00068 \textcolor{comment}{// get/set TEMP aliases}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00069}\mbox{\hyperlink{pin__manager_8h_af52789c753186cbfe529384dc8cf7a0c}{00069}} \textcolor{preprocessor}{\#define TEMP\_TRIS                 TRISAbits.TRISA0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00070}\mbox{\hyperlink{pin__manager_8h_a77c140c6b49e4816943c2238633f20a3}{00070}} \textcolor{preprocessor}{\#define TEMP\_LAT                  LATAbits.LATA0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00071}\mbox{\hyperlink{pin__manager_8h_a12b98c7eb73835e767e34f94d9df7008}{00071}} \textcolor{preprocessor}{\#define TEMP\_PORT                 PORTAbits.RA0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00072}\mbox{\hyperlink{pin__manager_8h_adbf500df3fd9305a25928810664f9cc5}{00072}} \textcolor{preprocessor}{\#define TEMP\_WPU                  WPUAbits.WPUA0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00073}\mbox{\hyperlink{pin__manager_8h_ac8ec3101638de89948946b16b7d9c10b}{00073}} \textcolor{preprocessor}{\#define TEMP\_ANS                  ANSELAbits.ANSA0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00074}\mbox{\hyperlink{pin__manager_8h_ae214c74a452929ce19e1c95331f16fd5}{00074}} \textcolor{preprocessor}{\#define TEMP\_SetHigh()            do \{ LATAbits.LATA0 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00075}\mbox{\hyperlink{pin__manager_8h_a6cedde373313cac7f62eb0dc60046079}{00075}} \textcolor{preprocessor}{\#define TEMP\_SetLow()             do \{ LATAbits.LATA0 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00076}\mbox{\hyperlink{pin__manager_8h_af8bc255f3c69b9b5ea8a5d59d7aa0c4a}{00076}} \textcolor{preprocessor}{\#define TEMP\_Toggle()             do \{ LATAbits.LATA0 = \string~LATAbits.LATA0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00077}\mbox{\hyperlink{pin__manager_8h_a8fc67deb0596711388e2060487b3fa8a}{00077}} \textcolor{preprocessor}{\#define TEMP\_GetValue()           PORTAbits.RA0}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00078}\mbox{\hyperlink{pin__manager_8h_abf122c79d04ea665b39b89a4aed4fb80}{00078}} \textcolor{preprocessor}{\#define TEMP\_SetDigitalInput()    do \{ TRISAbits.TRISA0 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00079}\mbox{\hyperlink{pin__manager_8h_a7f076514fbef38afb570910a39f8e482}{00079}} \textcolor{preprocessor}{\#define TEMP\_SetDigitalOutput()   do \{ TRISAbits.TRISA0 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00080}\mbox{\hyperlink{pin__manager_8h_a3500aa9c46ded5c1aba8474367a365bf}{00080}} \textcolor{preprocessor}{\#define TEMP\_SetPullup()          do \{ WPUAbits.WPUA0 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00081}\mbox{\hyperlink{pin__manager_8h_a782f0bfc87327f7f5effffe17b1757bd}{00081}} \textcolor{preprocessor}{\#define TEMP\_ResetPullup()        do \{ WPUAbits.WPUA0 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00082}\mbox{\hyperlink{pin__manager_8h_abfb5a8ebc747ba6903ed49fa08a01d81}{00082}} \textcolor{preprocessor}{\#define TEMP\_SetAnalogMode()      do \{ ANSELAbits.ANSA0 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00083}\mbox{\hyperlink{pin__manager_8h_aee477679c9b8f1b4f2b7e54b1261f045}{00083}} \textcolor{preprocessor}{\#define TEMP\_SetDigitalMode()     do \{ ANSELAbits.ANSA0 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00085}00085 \textcolor{comment}{// get/set CURRENT aliases}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00086}\mbox{\hyperlink{pin__manager_8h_a3d9f5745725050110898634452822d90}{00086}} \textcolor{preprocessor}{\#define CURRENT\_TRIS                 TRISAbits.TRISA1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00087}\mbox{\hyperlink{pin__manager_8h_a6100eb84bd7dcad2c9b51ad72b4ea395}{00087}} \textcolor{preprocessor}{\#define CURRENT\_LAT                  LATAbits.LATA1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00088}\mbox{\hyperlink{pin__manager_8h_a06496454dca5fb4391a42e5a8c2ac52d}{00088}} \textcolor{preprocessor}{\#define CURRENT\_PORT                 PORTAbits.RA1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00089}\mbox{\hyperlink{pin__manager_8h_a8357dcbc7535ea257a1a2454e287c114}{00089}} \textcolor{preprocessor}{\#define CURRENT\_WPU                  WPUAbits.WPUA1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00090}\mbox{\hyperlink{pin__manager_8h_a404f4cbe72bdc6585ea02dea9cc7900a}{00090}} \textcolor{preprocessor}{\#define CURRENT\_ANS                  ANSELAbits.ANSA1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00091}\mbox{\hyperlink{pin__manager_8h_afef536a7805c161e2822ee6c75831b15}{00091}} \textcolor{preprocessor}{\#define CURRENT\_SetHigh()            do \{ LATAbits.LATA1 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00092}\mbox{\hyperlink{pin__manager_8h_aeb81aac0372ac01056ad9dd6c9b23c71}{00092}} \textcolor{preprocessor}{\#define CURRENT\_SetLow()             do \{ LATAbits.LATA1 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00093}\mbox{\hyperlink{pin__manager_8h_aa88b69db0a0fbd69e145bd406fbf772b}{00093}} \textcolor{preprocessor}{\#define CURRENT\_Toggle()             do \{ LATAbits.LATA1 = \string~LATAbits.LATA1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00094}\mbox{\hyperlink{pin__manager_8h_ae367b373e0833c30d0830b388d483be8}{00094}} \textcolor{preprocessor}{\#define CURRENT\_GetValue()           PORTAbits.RA1}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00095}\mbox{\hyperlink{pin__manager_8h_a3dd88f41257ca2fb6834df59b7edb452}{00095}} \textcolor{preprocessor}{\#define CURRENT\_SetDigitalInput()    do \{ TRISAbits.TRISA1 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00096}\mbox{\hyperlink{pin__manager_8h_a403abd0e543380d49f323ab1d3a2f67f}{00096}} \textcolor{preprocessor}{\#define CURRENT\_SetDigitalOutput()   do \{ TRISAbits.TRISA1 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00097}\mbox{\hyperlink{pin__manager_8h_a3d9fe8a3dbcc3cedaf07f7dc167f09ab}{00097}} \textcolor{preprocessor}{\#define CURRENT\_SetPullup()          do \{ WPUAbits.WPUA1 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00098}\mbox{\hyperlink{pin__manager_8h_a4236d010ac597741030fa782e1b1f090}{00098}} \textcolor{preprocessor}{\#define CURRENT\_ResetPullup()        do \{ WPUAbits.WPUA1 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00099}\mbox{\hyperlink{pin__manager_8h_ab1b16bda5e85d43871f3b9cb49801814}{00099}} \textcolor{preprocessor}{\#define CURRENT\_SetAnalogMode()      do \{ ANSELAbits.ANSA1 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00100}\mbox{\hyperlink{pin__manager_8h_a779eb7f63817de527bcfa9a1268c8019}{00100}} \textcolor{preprocessor}{\#define CURRENT\_SetDigitalMode()     do \{ ANSELAbits.ANSA1 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00102}00102 \textcolor{comment}{// get/set RELAY aliases}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00103}\mbox{\hyperlink{pin__manager_8h_ae67e9b9b80c06aa28611dd2f0e0260e8}{00103}} \textcolor{preprocessor}{\#define RELAY\_TRIS                 TRISCbits.TRISC3}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00104}\mbox{\hyperlink{pin__manager_8h_a9ded3e75854b6f2764149a8d08b80320}{00104}} \textcolor{preprocessor}{\#define RELAY\_LAT                  LATCbits.LATC3}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00105}\mbox{\hyperlink{pin__manager_8h_ad5184e003d6bc3dbe879b7e023cf9bdd}{00105}} \textcolor{preprocessor}{\#define RELAY\_PORT                 PORTCbits.RC3}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00106}\mbox{\hyperlink{pin__manager_8h_ad3ff23b9015a3d3dad91fc300d49bd56}{00106}} \textcolor{preprocessor}{\#define RELAY\_WPU                  WPUCbits.WPUC3}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00107}\mbox{\hyperlink{pin__manager_8h_a585c6fccf7de5ce08b65a7c6bb7204b5}{00107}} \textcolor{preprocessor}{\#define RELAY\_ANS                  ANSELCbits.ANSC3}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00108}\mbox{\hyperlink{pin__manager_8h_a7a8a28c91e481c97b8deba22c87c920e}{00108}} \textcolor{preprocessor}{\#define RELAY\_SetHigh()            do \{ LATCbits.LATC3 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00109}\mbox{\hyperlink{pin__manager_8h_a12b67fced13d353952c1687d9aeb83c2}{00109}} \textcolor{preprocessor}{\#define RELAY\_SetLow()             do \{ LATCbits.LATC3 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00110}\mbox{\hyperlink{pin__manager_8h_a98349fa1e5988b3c1899611965abc034}{00110}} \textcolor{preprocessor}{\#define RELAY\_Toggle()             do \{ LATCbits.LATC3 = \string~LATCbits.LATC3; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00111}\mbox{\hyperlink{pin__manager_8h_abc059dd965939004ba7a7568569a1df1}{00111}} \textcolor{preprocessor}{\#define RELAY\_GetValue()           PORTCbits.RC3}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00112}\mbox{\hyperlink{pin__manager_8h_ac77fcf537c30b2e8e158bc14c03389c2}{00112}} \textcolor{preprocessor}{\#define RELAY\_SetDigitalInput()    do \{ TRISCbits.TRISC3 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00113}\mbox{\hyperlink{pin__manager_8h_a0bc00f3940dfacb67b4ad5a412021c3a}{00113}} \textcolor{preprocessor}{\#define RELAY\_SetDigitalOutput()   do \{ TRISCbits.TRISC3 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00114}\mbox{\hyperlink{pin__manager_8h_a5c461219b5bf71f402ae781ae2511d36}{00114}} \textcolor{preprocessor}{\#define RELAY\_SetPullup()          do \{ WPUCbits.WPUC3 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00115}\mbox{\hyperlink{pin__manager_8h_a94c1ca945399a2034933785b1fab3273}{00115}} \textcolor{preprocessor}{\#define RELAY\_ResetPullup()        do \{ WPUCbits.WPUC3 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00116}\mbox{\hyperlink{pin__manager_8h_af670fa610b7232a9979d77ce17911250}{00116}} \textcolor{preprocessor}{\#define RELAY\_SetAnalogMode()      do \{ ANSELCbits.ANSC3 = 1; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00117}\mbox{\hyperlink{pin__manager_8h_a8be54f29eca97cf52335f054626c4691}{00117}} \textcolor{preprocessor}{\#define RELAY\_SetDigitalMode()     do \{ ANSELCbits.ANSC3 = 0; \} while(0)}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00129}00129 \textcolor{keywordtype}{void} \mbox{\hyperlink{pin__manager_8h_a50357774183a136d9490f64ad0d5c6cb}{PIN\_MANAGER\_Initialize}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00141}00141 \textcolor{keywordtype}{void} \mbox{\hyperlink{pin__manager_8h_a6ff320d017cf9b99ba9045f24d7ec896}{PIN\_MANAGER\_IOC}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8h_source_l00145}00145 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PIN\_MANAGER\_H}}
+
+\end{DoxyCode}

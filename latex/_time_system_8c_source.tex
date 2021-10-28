@@ -1,0 +1,29 @@
+\hypertarget{_time_system_8c_source}{}\doxysection{Time\+System.\+c}
+\label{_time_system_8c_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/TimeSystem.c@{C:/Users/cesar/MPLABXProjects/motor.relay/TimeSystem.c}}
+\mbox{\hyperlink{_time_system_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_time_system_8h}{TimeSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00014}00014 \textcolor{comment}{/*Local Variables*/}}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00015}00015 \textcolor{keyword}{static} \textcolor{keywordtype}{void} incCurrentTimeMillis(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00017}00017 \textcolor{keyword}{static} \mbox{\hyperlink{struct_time_system}{TimeSystem}} instance = \{}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00018}00018     .\mbox{\hyperlink{struct_time_system_a1642e3752b796bcb87ca8f6aa3aa9efd}{incCurrentTimeMillis}} = incCurrentTimeMillis,}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00019}00019     .currentTimeMillis = 0}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00020}00020 \};}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00023}00023 \textcolor{comment}{/*Interface Functions*/}}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00025}\mbox{\hyperlink{_time_system_8c_a4d9df6a5e8a2a69cebe0c50f5ad49da5}{00025}} \mbox{\hyperlink{struct_time_system}{TimeSystem}} * \mbox{\hyperlink{_time_system_8c_a4d9df6a5e8a2a69cebe0c50f5ad49da5}{GetTimeSystemInstance}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00026}00026     \textcolor{keywordflow}{return} \&instance;}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00030}00030 \textcolor{keyword}{static} \textcolor{keywordtype}{void} incCurrentTimeMillis(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00031}00031     instance.\mbox{\hyperlink{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}{currentTimeMillis}}++;}
+\DoxyCodeLine{\Hypertarget{_time_system_8c_source_l00032}00032 \}}
+
+\end{DoxyCode}

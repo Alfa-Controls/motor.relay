@@ -1,0 +1,89 @@
+\hypertarget{app_8c_source}{}\doxysection{app.\+c}
+\label{app_8c_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/app.c@{C:/Users/cesar/MPLABXProjects/motor.relay/app.c}}
+\mbox{\hyperlink{app_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{app_8h}{app.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_time_system_8h}{TimeSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00016}00016 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{tmr1_8h}{mcc\_generated\_files/tmr1.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{adc_8h}{mcc\_generated\_files/adc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00018}00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pin__manager_8h}{mcc\_generated\_files/pin\_manager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sensor_8h}{Sensor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00020}00020 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_a_d_c_reader_8h}{ADCReader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00022}00022 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00024}00024 \textcolor{comment}{/*Definitions*/}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00025}00025 \textcolor{preprocessor}{\#define LIMIT\_TEMP\_TEMPORIZED 300 }}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00026}00026 \textcolor{preprocessor}{\#define LIMIT\_TEMP\_INST 800 }}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00027}00027 \textcolor{preprocessor}{\#define TEMPORIZED\_TIME 400 }\textcolor{comment}{/*< !< Time limit for temporized region [ms] */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00028}00028 \textcolor{preprocessor}{\#define PULSE\_PERIOD 500 }}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00029}00029 \textcolor{preprocessor}{\#define DEAD\_TIME 500 }}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00030}00030 \textcolor{preprocessor}{\#define LIMIT\_CURRENT\_INST 800 }}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00031}00031 \textcolor{preprocessor}{\#define LIMIT\_CURRENT\_TEMPORIZED 600 }}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00033}00033 \textcolor{comment}{/*Local definitions*/}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00038}\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444}{00038}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00039}\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a9aa925bc1a8429e54310c03c882df4a3}{00039}}     \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a9aa925bc1a8429e54310c03c882df4a3}{NOT\_INIT}}, }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00040}\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}{00040}}     \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}}, }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00041}\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444afed420ae8f5629096d56bd7adb2237a6}{00041}}     \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444afed420ae8f5629096d56bd7adb2237a6}{START\_PULSE}}, }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00042}\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a3d624565bc3c72395d19720f7bfb4cf8}{00042}}     \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a3d624565bc3c72395d19720f7bfb4cf8}{WAITING\_PULSE}}, }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00043}\mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a1c74a38a3f14391c7c65654aeb51061e}{00043}}     \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a1c74a38a3f14391c7c65654aeb51061e}{WAITING\_DEAD\_TIME}}, }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00044}00044 \} \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444}{States}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00047}00047 \textcolor{comment}{/*Local variables*/}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00048}00048 \textcolor{keyword}{static} \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444}{States}} state = \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a9aa925bc1a8429e54310c03c882df4a3}{NOT\_INIT}}; }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00049}00049 \textcolor{keyword}{static} \mbox{\hyperlink{struct_time_system}{TimeSystem}} * timer; }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00050}00050 \textcolor{keyword}{static} uint16\_t cronometer; }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00051}00051 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} isReadingTemp = \textcolor{keyword}{true}; }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00052}\mbox{\hyperlink{app_8c_aee0220efe7515a6f756228d2f70c3ed9}{00052}} \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{Sensor}} \mbox{\hyperlink{app_8c_aee0220efe7515a6f756228d2f70c3ed9}{temperatureSensor}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00053}\mbox{\hyperlink{app_8c_a856219327c862a102627a90b11b581c1}{00053}} \mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g}{Sensor}} \mbox{\hyperlink{app_8c_a856219327c862a102627a90b11b581c1}{ampSensor}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00054}\mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{00054}} \mbox{\hyperlink{struct_a_d_c_reader}{ADCReader}} * \mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{adc}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00056}00056 \textcolor{comment}{/*Interface Functions*/}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00066}\mbox{\hyperlink{app_8c_abf4510e1aba7b08f11d447c2b530d661}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{app_8c_abf4510e1aba7b08f11d447c2b530d661}{tasks}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00067}00067     \textcolor{keywordflow}{switch} (state) \{}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00068}00068         \textcolor{keywordflow}{case} \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a9aa925bc1a8429e54310c03c882df4a3}{NOT\_INIT}}:}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00069}00069             timer = \mbox{\hyperlink{_time_system_8c_a4d9df6a5e8a2a69cebe0c50f5ad49da5}{GetTimeSystemInstance}}();}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00070}00070             \mbox{\hyperlink{tmr1_8c_a20599ceedb13e0d11e236d959938a5e7}{TMR1\_SetInterruptHandler}}(timer-\/>\mbox{\hyperlink{struct_time_system_a1642e3752b796bcb87ca8f6aa3aa9efd}{incCurrentTimeMillis}});}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00071}00071             \mbox{\hyperlink{app_8c_aee0220efe7515a6f756228d2f70c3ed9}{temperatureSensor}} = \mbox{\hyperlink{_sensor_8c_a8926be117a79c870dd57738ba09194f9}{NewSensor}}(LIMIT\_TEMP\_INST, LIMIT\_TEMP\_TEMPORIZED, TEMPORIZED\_TIME);}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00072}00072             \mbox{\hyperlink{app_8c_a856219327c862a102627a90b11b581c1}{ampSensor}} = \mbox{\hyperlink{_sensor_8c_a8926be117a79c870dd57738ba09194f9}{NewSensor}}(LIMIT\_CURRENT\_INST, LIMIT\_CURRENT\_TEMPORIZED, TEMPORIZED\_TIME);}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00073}00073             \mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{adc}} = \mbox{\hyperlink{_a_d_c_reader_8c_a9308a2d59755ec3afd468921fd211695}{GetADCReaderInstance}}((uint16\_t(*)(\textcolor{keywordtype}{void})) \mbox{\hyperlink{adc_8c_a9650956bd92194e1b9f0bfd5bb2d73dd}{ADC\_GetConversionResult}},}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00074}00074                    (\textcolor{keywordtype}{void} (*)(uint8\_t)) \mbox{\hyperlink{adc_8c_a25c0a0a9fe2bdba070f9945ca641b5e0}{ADC\_SelectChannel}},}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00075}00075                     \mbox{\hyperlink{adc_8c_af96ee69b063edcebc656d0ca0450c12c}{ADC\_StartConversion}}, }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00076}00076                     (uint8\_t) \mbox{\hyperlink{adc_8h_aafc4060027875f8fe46242b0656d7814a5937389a60030a604f0efdf5e3927325}{TEMP}}, (uint8\_t) \mbox{\hyperlink{adc_8h_aafc4060027875f8fe46242b0656d7814a7770173898835c0954853cb16e8d284a}{CURRENT}}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00077}00077             );}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00078}00078             \mbox{\hyperlink{adc_8c_a853bf4f29c400aa205e0474a03f64e32}{ADC\_SetInterruptHandler}}(\mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{adc}}-\/>\mbox{\hyperlink{struct_a_d_c_reader_a750d05061f61bd79c5fd621fff0801b4}{read}});}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00079}00079             \mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{adc}}-\/>\mbox{\hyperlink{struct_a_d_c_reader_a70526eb95af7b40162c92b34a7124698}{init}}();}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00080}00080             state = \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00081}00081             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00082}00082         \textcolor{keywordflow}{case} \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}}:}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00083}00083             \mbox{\hyperlink{app_8c_aee0220efe7515a6f756228d2f70c3ed9}{temperatureSensor}}.\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a572fff6d76b21b25ab444348035f7f3f}{tasks}}(\&\mbox{\hyperlink{app_8c_aee0220efe7515a6f756228d2f70c3ed9}{temperatureSensor}}, \mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{adc}}-\/>\mbox{\hyperlink{struct_a_d_c_reader_a6bd95140398cc8f4b44157b17d6ba31e}{temperature}});}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00084}00084             \mbox{\hyperlink{app_8c_a856219327c862a102627a90b11b581c1}{ampSensor}}.\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a572fff6d76b21b25ab444348035f7f3f}{tasks}}(\&\mbox{\hyperlink{app_8c_a856219327c862a102627a90b11b581c1}{ampSensor}}, \mbox{\hyperlink{app_8c_ab279defc3aafe293386fe494a1c1bc85}{adc}}-\/>\mbox{\hyperlink{struct_a_d_c_reader_aaad5615d233044464c3661481a6760cd}{current}});}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00085}00085             \textcolor{keywordflow}{if} (\mbox{\hyperlink{app_8c_a856219327c862a102627a90b11b581c1}{ampSensor}}.\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a585c826f354b06771c2f37d0c8947bf7}{trip}} || \mbox{\hyperlink{app_8c_aee0220efe7515a6f756228d2f70c3ed9}{temperatureSensor}}.\mbox{\hyperlink{struct_s_e_n_s_o_r___t_a_g_a585c826f354b06771c2f37d0c8947bf7}{trip}})}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00086}00086                 state = \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444afed420ae8f5629096d56bd7adb2237a6}{START\_PULSE}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00087}00087             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00088}00088         \textcolor{keywordflow}{case} \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444afed420ae8f5629096d56bd7adb2237a6}{START\_PULSE}}:}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00089}00089             cronometer = timer-\/>\mbox{\hyperlink{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}{currentTimeMillis}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00090}00090             \mbox{\hyperlink{pin__manager_8h_a7a8a28c91e481c97b8deba22c87c920e}{RELAY\_SetHigh}}();}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00091}00091             state = \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a3d624565bc3c72395d19720f7bfb4cf8}{WAITING\_PULSE}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00092}00092             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00093}00093         \textcolor{keywordflow}{case} \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a3d624565bc3c72395d19720f7bfb4cf8}{WAITING\_PULSE}}:}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00094}00094             \textcolor{keywordflow}{if} ((timer-\/>\mbox{\hyperlink{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}{currentTimeMillis}} -\/ cronometer) > PULSE\_PERIOD) \{}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00095}00095                 \mbox{\hyperlink{pin__manager_8h_a12b67fced13d353952c1687d9aeb83c2}{RELAY\_SetLow}}();}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00096}00096                 state = \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a1c74a38a3f14391c7c65654aeb51061e}{WAITING\_DEAD\_TIME}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00097}00097                 cronometer = timer-\/>\mbox{\hyperlink{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}{currentTimeMillis}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00098}00098             \}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00099}00099             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00100}00100         \textcolor{keywordflow}{case} \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a1c74a38a3f14391c7c65654aeb51061e}{WAITING\_DEAD\_TIME}}:}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00101}00101             \textcolor{keywordflow}{if} ((timer-\/>\mbox{\hyperlink{struct_time_system_a7b3446cd1d37acf7def1db1d288c343c}{currentTimeMillis}} -\/ cronometer) > DEAD\_TIME) \{}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00102}00102                 \mbox{\hyperlink{pin__manager_8h_a12b67fced13d353952c1687d9aeb83c2}{RELAY\_SetLow}}();}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00103}00103                 state = \mbox{\hyperlink{app_8c_a808e5cd4979462d3bbe3070d7d147444a92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00104}00104             \}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00105}00105             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{app_8c_source_l00108}00108 \}}
+
+\end{DoxyCode}

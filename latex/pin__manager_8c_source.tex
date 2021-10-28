@@ -1,0 +1,66 @@
+\hypertarget{pin__manager_8c_source}{}\doxysection{pin\+\_\+manager.\+c}
+\label{pin__manager_8c_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/mcc\_generated\_files/pin\_manager.c@{C:/Users/cesar/MPLABXProjects/motor.relay/mcc\_generated\_files/pin\_manager.c}}
+\mbox{\hyperlink{pin__manager_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00026}00026 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00027}00027 \textcolor{comment}{    (c) 2018 Microchip Technology Inc. and its subsidiaries. }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00028}00028 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00029}00029 \textcolor{comment}{    Subject to your compliance with these terms, you may use Microchip software and any }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00030}00030 \textcolor{comment}{    derivatives exclusively with Microchip products. It is your responsibility to comply with third party }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00031}00031 \textcolor{comment}{    license terms applicable to your use of third party software (including open source software) that }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00032}00032 \textcolor{comment}{    may accompany Microchip software.}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00033}00033 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00034}00034 \textcolor{comment}{    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}AS IS"{}. NO WARRANTIES, WHETHER }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00035}00035 \textcolor{comment}{    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00036}00036 \textcolor{comment}{    IMPLIED WARRANTIES OF NON-\/INFRINGEMENT, MERCHANTABILITY, AND FITNESS }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00037}00037 \textcolor{comment}{    FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00038}00038 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00039}00039 \textcolor{comment}{    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00040}00040 \textcolor{comment}{    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00041}00041 \textcolor{comment}{    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00042}00042 \textcolor{comment}{    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00043}00043 \textcolor{comment}{    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00044}00044 \textcolor{comment}{    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00045}00045 \textcolor{comment}{    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS }}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00046}00046 \textcolor{comment}{    SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00047}00047 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00049}00049 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pin__manager_8h}{pin\_manager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00055}\mbox{\hyperlink{pin__manager_8c_a50357774183a136d9490f64ad0d5c6cb}{00055}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pin__manager_8c_a50357774183a136d9490f64ad0d5c6cb}{PIN\_MANAGER\_Initialize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00060}00060     LATA = 0x00;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00061}00061     LATC = 0x00;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00066}00066     TRISA = 0x3F;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00067}00067     TRISC = 0x37;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00072}00072     ANSELC = 0x07;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00073}00073     ANSELA = 0x17;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00078}00078     WPUA = 0x00;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00079}00079     WPUC = 0x00;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00080}00080     OPTION\_REGbits.nWPUEN = 1;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00086}00086     APFCON0 = 0x00;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00087}00087     APFCON1 = 0x00;}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00092}00092    }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00093}00093     }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00095}00095   }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00096}\mbox{\hyperlink{pin__manager_8c_a6ff320d017cf9b99ba9045f24d7ec896}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pin__manager_8c_a6ff320d017cf9b99ba9045f24d7ec896}{PIN\_MANAGER\_IOC}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00097}00097 \{   }
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00098}00098 \}}
+\DoxyCodeLine{\Hypertarget{pin__manager_8c_source_l00099}00099 }
+
+\end{DoxyCode}

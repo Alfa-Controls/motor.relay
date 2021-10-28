@@ -1,0 +1,59 @@
+\hypertarget{mcc_8c_source}{}\doxysection{mcc.\+c}
+\label{mcc_8c_source}\index{C:/Users/cesar/MPLABXProjects/motor.relay/mcc\_generated\_files/mcc.c@{C:/Users/cesar/MPLABXProjects/motor.relay/mcc\_generated\_files/mcc.c}}
+\mbox{\hyperlink{mcc_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00024}00024 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00025}00025 \textcolor{comment}{    (c) 2018 Microchip Technology Inc. and its subsidiaries. }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00026}00026 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00027}00027 \textcolor{comment}{    Subject to your compliance with these terms, you may use Microchip software and any }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00028}00028 \textcolor{comment}{    derivatives exclusively with Microchip products. It is your responsibility to comply with third party }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00029}00029 \textcolor{comment}{    license terms applicable to your use of third party software (including open source software) that }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00030}00030 \textcolor{comment}{    may accompany Microchip software.}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00031}00031 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00032}00032 \textcolor{comment}{    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}AS IS"{}. NO WARRANTIES, WHETHER }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00033}00033 \textcolor{comment}{    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00034}00034 \textcolor{comment}{    IMPLIED WARRANTIES OF NON-\/INFRINGEMENT, MERCHANTABILITY, AND FITNESS }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00035}00035 \textcolor{comment}{    FOR A PARTICULAR PURPOSE.}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00036}00036 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00037}00037 \textcolor{comment}{    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00038}00038 \textcolor{comment}{    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00039}00039 \textcolor{comment}{    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00040}00040 \textcolor{comment}{    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00041}00041 \textcolor{comment}{    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00042}00042 \textcolor{comment}{    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00043}00043 \textcolor{comment}{    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00044}00044 \textcolor{comment}{    SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00045}00045 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00047}00047 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mcc_8h}{mcc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00050}\mbox{\hyperlink{mcc_8c_a5e8391114a0cf91ac20002be25e3d352}{00050}} \textcolor{keywordtype}{void} \mbox{\hyperlink{mcc_8c_a5e8391114a0cf91ac20002be25e3d352}{SYSTEM\_Initialize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00051}00051 \{}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00053}00053     \mbox{\hyperlink{pin__manager_8c_a50357774183a136d9490f64ad0d5c6cb}{PIN\_MANAGER\_Initialize}}();}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00054}00054     \mbox{\hyperlink{mcc_8c_a4777dd92514a7e4ef803f9e869006f5d}{OSCILLATOR\_Initialize}}();}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00055}00055     \mbox{\hyperlink{mcc_8c_a6de6e2435c7dc554df52111e28586835}{WDT\_Initialize}}();}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00056}00056     \mbox{\hyperlink{tmr1_8c_aeca9435d024c8eeada966c9dffbb8427}{TMR1\_Initialize}}();}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00057}00057     \mbox{\hyperlink{adc_8c_ab0e0ea1662a8e789547210a2d33127e1}{ADC\_Initialize}}();}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00060}\mbox{\hyperlink{mcc_8c_a4777dd92514a7e4ef803f9e869006f5d}{00060}} \textcolor{keywordtype}{void} \mbox{\hyperlink{mcc_8c_a4777dd92514a7e4ef803f9e869006f5d}{OSCILLATOR\_Initialize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00062}00062     \textcolor{comment}{// SCS INTOSC; SPLLEN disabled; IRCF 8MHz\_HF; }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00063}00063     OSCCON = 0x72;}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00064}00064     \textcolor{comment}{// TUN 0; }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00065}00065     OSCTUNE = 0x00;}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00066}00066     \textcolor{comment}{// SBOREN disabled; }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00067}00067     BORCON = 0x00;}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00070}\mbox{\hyperlink{mcc_8c_a6de6e2435c7dc554df52111e28586835}{00070}} \textcolor{keywordtype}{void} \mbox{\hyperlink{mcc_8c_a6de6e2435c7dc554df52111e28586835}{WDT\_Initialize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00071}00071 \{}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00072}00072     \textcolor{comment}{// WDTPS 1:65536; SWDTEN OFF; }}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00073}00073     WDTCON = 0x16;}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00074}00074 \}}
+\DoxyCodeLine{\Hypertarget{mcc_8c_source_l00075}00075 }
+
+\end{DoxyCode}
