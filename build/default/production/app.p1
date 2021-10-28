@@ -1,31 +1,69 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"24 app.c
-[; ;app.c: 24: static States state = NOT_INIT;
-[c E2396 0 1 2 3 4 .. ]
-[n E2396 . NOT_INIT MONITOR TEMPORIZ START_PULSE WAITING_PULSE  ]
+"48 app.c
+[; ;app.c: 48: static States state = NOT_INIT;
+[c E2454 0 1 2 3 4 .. ]
+[n E2454 . NOT_INIT MONITOR START_PULSE WAITING_PULSE WAITING_DEAD_TIME  ]
 [v F6 `(v ~T0 @X0 0 tf ]
-"18 ./TimeSystem.h
-[; ;./TimeSystem.h: 18:     typedef struct {
+"29 ./TimeSystem.h
+[; ;./TimeSystem.h: 29:     typedef struct {
 [s S1 `uo 1 `*F6 1 ]
 [n S1 . currentTimeMillis incCurrentTimeMillis ]
-"258 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 258: adc_result_t ADC_GetConversionResult(void);
-[v _ADC_GetConversionResult `(us ~T0 @X0 0 ef ]
-"193
-[; ;./mcc_generated_files/adc.h: 193: void ADC_StartConversion(void);
-[v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
-"43 ./TimeSystem.h
-[; ;./TimeSystem.h: 43:     TimeSystem * GetTimeSystemInstance(void);
+"52 app.c
+[; ;app.c: 52: Sensor temperatureSensor;
+[c E2397 0 1 2 .. ]
+[n E2397 . MONITORING TEMPORIZED TRIP  ]
+[v F2408 `(v ~T0 @X0 0 tf2`*S330`us ]
+"48 ./Sensor.h
+[; ;./Sensor.h: 48:     typedef struct SENSOR_TAG {
+[s S330 `E2397 1 `us 1 `us 1 `us 1 `*F2408 1 `us 1 `a 1 ]
+[n S330 SENSOR_TAG state triggerInst triggerTemp timeLimit tasks cronometer trip ]
+[v F2426 `(v ~T0 @X0 0 tf ]
+[v F2428 `(v ~T0 @X0 0 tf ]
+"54 app.c
+[; ;app.c: 54: ADCReader * adc;
+[c E2418 0 1 .. ]
+[n E2418 . ADC_READING_TEMP ADC_READING_CURRENT  ]
+[v F2431 `(us ~T0 @X0 0 tf ]
+[v F2433 `(v ~T0 @X0 0 tf1`uc ]
+[v F2436 `(v ~T0 @X0 0 tf ]
+"45 ./ADCReader.h
+[; ;./ADCReader.h: 45:     typedef struct {
+[s S331 `us 1 `us 1 `*F2426 1 `*F2428 1 `E2418 1 `*F2431 1 `*F2433 1 `*F2436 1 `uc 1 `uc 1 ]
+[n S331 . temperature current read init state getResult setChannel startConversion tempChannel ampChannel ]
+"54 ./TimeSystem.h
+[; ;./TimeSystem.h: 54:     TimeSystem * GetTimeSystemInstance(void);
 [v _GetTimeSystemInstance `(*S1 ~T0 @X0 0 ef ]
 [v F53 `(v ~T0 @X0 0 tf ]
 "403 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 403:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F53 ]
-[v F2388 `(v ~T0 @X0 0 tf ]
-"350 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 350:  void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2388 ]
-[v F2410 `(v ~T0 @X0 0 tf ]
+"75 ./Sensor.h
+[; ;./Sensor.h: 75:     Sensor NewSensor(uint16_t ti, uint16_t tt, uint16_t tl);
+[v _NewSensor `(S330 ~T0 @X0 0 ef3`us`us`us ]
+[v F2441 `(us ~T0 @X0 0 tf ]
+[v F2442 `(v ~T0 @X0 0 tf1`uc ]
+[v F2444 `(v ~T0 @X0 0 tf ]
+"113 ./ADCReader.h
+[; ;./ADCReader.h: 113:     ADCReader * GetADCReaderInstance(uint16_t (*getResult)(void), void (*setChannel)(uint8_t channel), void (*start)(void), uint8_t teC, uint8_t amC);
+[v _GetADCReaderInstance `(*S331 ~T0 @X0 0 ef5`*F2441`*F2442`*F2444`uc`uc ]
+"259 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 259: adc_result_t ADC_GetConversionResult(void);
+[v _ADC_GetConversionResult `(us ~T0 @X0 0 ef ]
+"73 app.c
+[; ;app.c: 73:             adc = GetADCReaderInstance((uint16_t(*)(void)) ADC_GetConversionResult,
+[c E2371 0 1 29 30 31 .. ]
+[n E2371 . TEMP CURRENT channel_Temp channel_DAC channel_FVR  ]
+"167 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 167: void ADC_SelectChannel(adc_channel_t channel);
+[v _ADC_SelectChannel `(v ~T0 @X0 0 ef1`E2371 ]
+[v F2471 `(v ~T0 @X0 0 tf1`uc ]
+"194
+[; ;./mcc_generated_files/adc.h: 194: void ADC_StartConversion(void);
+[v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
+[v F2389 `(v ~T0 @X0 0 tf ]
+"351
+[; ;./mcc_generated_files/adc.h: 351:  void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _ADC_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2389 ]
 "1996 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 1996:     struct {
 [s S109 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -475,191 +513,175 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6153
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 6153: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"24 app.c
-[; ;app.c: 24: static States state = NOT_INIT;
-[v _state `E2396 ~T0 @X0 1 s ]
+"48 app.c
+[; ;app.c: 48: static States state = NOT_INIT;
+[v _state `E2454 ~T0 @X0 1 s ]
 [i _state
-. `E2396 0
+. `E2454 0
 ]
-"25
-[; ;app.c: 25: TimeSystem * timer;
-[v _timer `*S1 ~T0 @X0 1 e ]
-"26
-[; ;app.c: 26: unsigned long long cronometer;
-[v _cronometer `uo ~T0 @X0 1 e ]
-"27
-[; ;app.c: 27: uint16_t adcResult;
-[v _adcResult `us ~T0 @X0 1 e ]
-"30
-[; ;app.c: 30: static void adc_read() {
-[v _adc_read `(v ~T0 @X0 1 sf ]
-{
-[e :U _adc_read ]
-[f ]
-"31
-[; ;app.c: 31:     adcResult = (uint16_t) ADC_GetConversionResult();
-[e = _adcResult ( _ADC_GetConversionResult ..  ]
-"32
-[; ;app.c: 32:     ADC_StartConversion();
-[e ( _ADC_StartConversion ..  ]
-"33
-[; ;app.c: 33: }
-[e :UE 330 ]
-}
-"36
-[; ;app.c: 36: void tasks(void) {
+"49
+[; ;app.c: 49: static TimeSystem * timer;
+[v _timer `*S1 ~T0 @X0 1 s ]
+"50
+[; ;app.c: 50: static uint16_t cronometer;
+[v _cronometer `us ~T0 @X0 1 s ]
+"51
+[; ;app.c: 51: static _Bool isReadingTemp = 1;
+[v _isReadingTemp `a ~T0 @X0 1 s ]
+[i _isReadingTemp
+-> -> 1 `i `a
+]
+"52
+[; ;app.c: 52: Sensor temperatureSensor;
+[v _temperatureSensor `S330 ~T0 @X0 1 e ]
+"53
+[; ;app.c: 53: Sensor ampSensor;
+[v _ampSensor `S330 ~T0 @X0 1 e ]
+"54
+[; ;app.c: 54: ADCReader * adc;
+[v _adc `*S331 ~T0 @X0 1 e ]
+"66
+[; ;app.c: 66: void tasks(void) {
 [v _tasks `(v ~T0 @X0 1 ef ]
 {
 [e :U _tasks ]
 [f ]
-"37
-[; ;app.c: 37:     switch (state) {
-[e $U 333  ]
-{
-"38
-[; ;app.c: 38:         case NOT_INIT:
-[e :U 334 ]
-"39
-[; ;app.c: 39:             timer = GetTimeSystemInstance();
-[e = _timer ( _GetTimeSystemInstance ..  ]
-"40
-[; ;app.c: 40:             TMR1_SetInterruptHandler(timer->incCurrentTimeMillis);
-[e ( _TMR1_SetInterruptHandler (1 . *U _timer 1 ]
-"41
-[; ;app.c: 41:             ADC_StartConversion();
-[e ( _ADC_StartConversion ..  ]
-"42
-[; ;app.c: 42:             ADC_SetInterruptHandler(adc_read);
-[e ( _ADC_SetInterruptHandler (1 -> &U _adc_read `*F2410 ]
-"43
-[; ;app.c: 43:             state = MONITOR;
-[e = _state . `E2396 1 ]
-"44
-[; ;app.c: 44:             break;
-[e $U 332  ]
-"45
-[; ;app.c: 45:         case MONITOR:
-[e :U 335 ]
-"46
-[; ;app.c: 46:             if (adcResult > 800) {
-[e $ ! > -> _adcResult `ui -> -> 800 `i `ui 336  ]
-{
-"47
-[; ;app.c: 47:                 state = START_PULSE;
-[e = _state . `E2396 3 ]
-"48
-[; ;app.c: 48:                 break;
-[e $U 332  ]
-"49
-[; ;app.c: 49:             }
-}
-[e :U 336 ]
-"50
-[; ;app.c: 50:             if (adcResult > 300) {
-[e $ ! > -> _adcResult `ui -> -> 300 `i `ui 337  ]
-{
-"51
-[; ;app.c: 51:                 cronometer = timer->currentTimeMillis;
-[e = _cronometer . *U _timer 0 ]
-"52
-[; ;app.c: 52:                 state = TEMPORIZ;
-[e = _state . `E2396 2 ]
-"53
-[; ;app.c: 53:             }
-}
-[e :U 337 ]
-"54
-[; ;app.c: 54:             break;
-[e $U 332  ]
-"55
-[; ;app.c: 55:         case TEMPORIZ:
-[e :U 338 ]
-"56
-[; ;app.c: 56:             if ((timer->currentTimeMillis - cronometer) > 400)
-[e $ ! > - . *U _timer 0 _cronometer -> -> -> 400 `i `o `uo 339  ]
-"57
-[; ;app.c: 57:                 state = START_PULSE;
-[e = _state . `E2396 3 ]
-[e $U 340  ]
-"58
-[; ;app.c: 58:             else if (adcResult < 300)
-[e :U 339 ]
-[e $ ! < -> _adcResult `ui -> -> 300 `i `ui 341  ]
-"59
-[; ;app.c: 59:                 state = MONITOR;
-[e = _state . `E2396 1 ]
-[e :U 341 ]
-[e :U 340 ]
-"60
-[; ;app.c: 60:             if (adcResult > 800) {
-[e $ ! > -> _adcResult `ui -> -> 800 `i `ui 342  ]
-{
-"61
-[; ;app.c: 61:                 state = START_PULSE;
-[e = _state . `E2396 3 ]
-"62
-[; ;app.c: 62:                 break;
-[e $U 332  ]
-"63
-[; ;app.c: 63:             }
-}
-[e :U 342 ]
-"64
-[; ;app.c: 64:             break;
-[e $U 332  ]
-"65
-[; ;app.c: 65:         case START_PULSE:
-[e :U 343 ]
-"66
-[; ;app.c: 66:             cronometer = timer->currentTimeMillis;
-[e = _cronometer . *U _timer 0 ]
 "67
-[; ;app.c: 67:             do { LATCbits.LATC3 = 1; } while(0);
-[e :U 346 ]
+[; ;app.c: 67:     switch (state) {
+[e $U 334  ]
+{
+"68
+[; ;app.c: 68:         case NOT_INIT:
+[e :U 335 ]
+"69
+[; ;app.c: 69:             timer = GetTimeSystemInstance();
+[e = _timer ( _GetTimeSystemInstance ..  ]
+"70
+[; ;app.c: 70:             TMR1_SetInterruptHandler(timer->incCurrentTimeMillis);
+[e ( _TMR1_SetInterruptHandler (1 . *U _timer 1 ]
+"71
+[; ;app.c: 71:             temperatureSensor = NewSensor(800, 300, 400);
+[e = _temperatureSensor ( _NewSensor (3 , , -> -> 800 `i `us -> -> 300 `i `us -> -> 400 `i `us ]
+"72
+[; ;app.c: 72:             ampSensor = NewSensor(800, 600, 400);
+[e = _ampSensor ( _NewSensor (3 , , -> -> 800 `i `us -> -> 600 `i `us -> -> 400 `i `us ]
+"73
+[; ;app.c: 73:             adc = GetADCReaderInstance((uint16_t(*)(void)) ADC_GetConversionResult,
+[e = _adc ( _GetADCReaderInstance (4 , , , , &U _ADC_GetConversionResult -> &U _ADC_SelectChannel `*F2471 &U _ADC_StartConversion -> . `E2371 0 `uc -> . `E2371 1 `uc ]
+"78
+[; ;app.c: 78:             ADC_SetInterruptHandler(adc->read);
+[e ( _ADC_SetInterruptHandler (1 . *U _adc 2 ]
+"79
+[; ;app.c: 79:             adc->init();
+[e ( *U . *U _adc 3 ..  ]
+"80
+[; ;app.c: 80:             state = MONITOR;
+[e = _state . `E2454 1 ]
+"81
+[; ;app.c: 81:             break;
+[e $U 333  ]
+"82
+[; ;app.c: 82:         case MONITOR:
+[e :U 336 ]
+"83
+[; ;app.c: 83:             temperatureSensor.tasks(&temperatureSensor, adc->temperature);
+[e ( *U . _temperatureSensor 4 (2 , &U _temperatureSensor . *U _adc 0 ]
+"84
+[; ;app.c: 84:             ampSensor.tasks(&ampSensor, adc->current);
+[e ( *U . _ampSensor 4 (2 , &U _ampSensor . *U _adc 1 ]
+"85
+[; ;app.c: 85:             if (ampSensor.trip || temperatureSensor.trip)
+[e $ ! || != -> . _ampSensor 6 `i -> 0 `i != -> . _temperatureSensor 6 `i -> 0 `i 337  ]
+"86
+[; ;app.c: 86:                 state = START_PULSE;
+[e = _state . `E2454 2 ]
+[e :U 337 ]
+"87
+[; ;app.c: 87:             break;
+[e $U 333  ]
+"88
+[; ;app.c: 88:         case START_PULSE:
+[e :U 338 ]
+"89
+[; ;app.c: 89:             cronometer = timer->currentTimeMillis;
+[e = _cronometer -> . *U _timer 0 `us ]
+"90
+[; ;app.c: 90:             do { LATCbits.LATC3 = 1; } while(0);
+[e :U 341 ]
 {
 [e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
 }
-[e :U 345 ]
-"68
-[; ;app.c: 68:             state = WAITING_PULSE;
-[e = _state . `E2396 4 ]
-"69
-[; ;app.c: 69:             break;
-[e $U 332  ]
-"70
-[; ;app.c: 70:         case WAITING_PULSE:
-[e :U 347 ]
-"71
-[; ;app.c: 71:             if ((timer->currentTimeMillis - cronometer) > 500) {
-[e $ ! > - . *U _timer 0 _cronometer -> -> -> 500 `i `o `uo 348  ]
+[e :U 340 ]
+"91
+[; ;app.c: 91:             state = WAITING_PULSE;
+[e = _state . `E2454 3 ]
+"92
+[; ;app.c: 92:             break;
+[e $U 333  ]
+"93
+[; ;app.c: 93:         case WAITING_PULSE:
+[e :U 342 ]
+"94
+[; ;app.c: 94:             if ((timer->currentTimeMillis - cronometer) > 500) {
+[e $ ! > - . *U _timer 0 -> _cronometer `uo -> -> -> 500 `i `o `uo 343  ]
 {
-"72
-[; ;app.c: 72:                 do { LATCbits.LATC3 = 0; } while(0);
+"95
+[; ;app.c: 95:                 do { LATCbits.LATC3 = 0; } while(0);
+[e :U 346 ]
+{
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+}
+[e :U 345 ]
+"96
+[; ;app.c: 96:                 state = WAITING_DEAD_TIME;
+[e = _state . `E2454 4 ]
+"97
+[; ;app.c: 97:                 cronometer = timer->currentTimeMillis;
+[e = _cronometer -> . *U _timer 0 `us ]
+"98
+[; ;app.c: 98:             }
+}
+[e :U 343 ]
+"99
+[; ;app.c: 99:             break;
+[e $U 333  ]
+"100
+[; ;app.c: 100:         case WAITING_DEAD_TIME:
+[e :U 347 ]
+"101
+[; ;app.c: 101:             if ((timer->currentTimeMillis - cronometer) > 500) {
+[e $ ! > - . *U _timer 0 -> _cronometer `uo -> -> -> 500 `i `o `uo 348  ]
+{
+"102
+[; ;app.c: 102:                 do { LATCbits.LATC3 = 0; } while(0);
 [e :U 351 ]
 {
 [e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
 }
 [e :U 350 ]
-"73
-[; ;app.c: 73:                 state = MONITOR;
-[e = _state . `E2396 1 ]
-"74
-[; ;app.c: 74:             }
+"103
+[; ;app.c: 103:                 state = MONITOR;
+[e = _state . `E2454 1 ]
+"104
+[; ;app.c: 104:             }
 }
 [e :U 348 ]
-"75
-[; ;app.c: 75:     }
+"105
+[; ;app.c: 105:             break;
+[e $U 333  ]
+"106
+[; ;app.c: 106:     }
 }
-[e $U 332  ]
+[e $U 333  ]
+[e :U 334 ]
+[e [\ -> _state `ui , $ -> . `E2454 0 `ui 335
+ , $ -> . `E2454 1 `ui 336
+ , $ -> . `E2454 2 `ui 338
+ , $ -> . `E2454 3 `ui 342
+ , $ -> . `E2454 4 `ui 347
+ 333 ]
 [e :U 333 ]
-[e [\ -> _state `ui , $ -> . `E2396 0 `ui 334
- , $ -> . `E2396 1 `ui 335
- , $ -> . `E2396 2 `ui 338
- , $ -> . `E2396 3 `ui 343
- , $ -> . `E2396 4 `ui 347
- 332 ]
-[e :U 332 ]
-"76
-[; ;app.c: 76: }
-[e :UE 331 ]
+"108
+[; ;app.c: 108: }
+[e :UE 332 ]
 }

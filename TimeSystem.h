@@ -1,8 +1,14 @@
-/* 
+/**
  * File:   TimeSystem.h
- * Author: cesar
+ * Author: Cesar Daltoe Berci
  *
  * Created on October 20, 2021, 9:50 PM
+ * Last Review: October 20, 2021, 9:50 PM
+ * 
+ * @details
+ * Basic time handler utility.<br>
+ * This file provide a time counter method using a current time milliseconds
+ * variable, that should be updated by a hardware timer.
  */
 
 #ifndef TIMESYSTEM_H
@@ -13,7 +19,12 @@ extern "C" {
 #endif
 
     /**
+     * @brief
      * Time System structure definitions
+     * @detail
+     * This structure defines the properties and behaviors of the
+     * time control system.
+     * It also provides a variable with the current time in milliseconds
      */
     typedef struct {
         /**
@@ -31,7 +42,7 @@ extern "C" {
     /**
      * @summary
      * Getter for TimeSystem instance
-     * @brief
+     * @details
      * Time System has only one instance that can be
      * get through this method.
      * 

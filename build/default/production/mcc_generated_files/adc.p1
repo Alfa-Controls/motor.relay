@@ -1,5 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2370 `(v ~T0 @X0 0 tf ]
+[v F2371 `(v ~T0 @X0 0 tf ]
 "1873 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 1873: extern volatile unsigned char ADCON1 __attribute__((address(0x09E)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
@@ -23,17 +23,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1225
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 1225: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x091)));
 [v _PIE1bits `VS72 ~T0 @X0 0 e@145 ]
-[v F2363 `(v ~T0 @X0 0 tf ]
-"350 mcc_generated_files/adc.h
-[; ;mcc_generated_files/adc.h: 350:  void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2363 ]
-"386
-[; ;mcc_generated_files/adc.h: 386: void ADC_DefaultInterruptHandler(void);
+[v F2364 `(v ~T0 @X0 0 tf ]
+"351 mcc_generated_files/adc.h
+[; ;mcc_generated_files/adc.h: 351:  void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _ADC_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2364 ]
+"387
+[; ;mcc_generated_files/adc.h: 387: void ADC_DefaultInterruptHandler(void);
 [v _ADC_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "90 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 90: void ADC_SelectChannel(adc_channel_t channel)
-[c E2346 0 29 30 31 .. ]
-[n E2346 . TEMP channel_Temp channel_DAC channel_FVR  ]
+[c E2346 0 1 29 30 31 .. ]
+[n E2346 . TEMP CURRENT channel_Temp channel_DAC channel_FVR  ]
 "1799 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 1799:     struct {
 [s S99 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -68,9 +68,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 546: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
 [v _PIR1bits `VS37 ~T0 @X0 0 e@17 ]
-[v F2382 `(v ~T0 @X0 0 tf ]
-[v F2384 `(v ~T0 @X0 0 tf ]
-[v F2386 `(v ~T0 @X0 0 tf ]
+[v F2383 `(v ~T0 @X0 0 tf ]
+[v F2385 `(v ~T0 @X0 0 tf ]
+[v F2387 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -511,7 +511,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 0FEFh ;# ">
 "61 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 61: void (*ADC_InterruptHandler)(void);
-[v _ADC_InterruptHandler `*F2370 ~T0 @X0 1 e ]
+[v _ADC_InterruptHandler `*F2371 ~T0 @X0 1 e ]
 "67
 [; ;mcc_generated_files/adc.c: 67: void ADC_Initialize(void)
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]
@@ -688,7 +688,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "150
 [; ;mcc_generated_files/adc.c: 150:  if(ADC_InterruptHandler)
-[e $ ! != _ADC_InterruptHandler -> -> 0 `i `*F2382 340  ]
+[e $ ! != _ADC_InterruptHandler -> -> 0 `i `*F2383 340  ]
 "151
 [; ;mcc_generated_files/adc.c: 151:     {
 {
@@ -705,10 +705,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "156
 [; ;mcc_generated_files/adc.c: 156: void ADC_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _ADC_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2384 ]
+[v _ADC_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2385 ]
 {
 [e :U _ADC_SetInterruptHandler ]
-[v _InterruptHandler `*F2386 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F2387 ~T0 @X0 1 r1 ]
 [f ]
 "157
 [; ;mcc_generated_files/adc.c: 157:     ADC_InterruptHandler = InterruptHandler;

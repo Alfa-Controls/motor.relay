@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Aula-20.10.2021.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=Aula-20.10.2021.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=aula-20.10.2021.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/motor.relay.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=motor.relay.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=motor.relay/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/aula-20.10.2021.x/bin
+makeDirectory ${TMPDIR}/motor.relay/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/aula-20.10.2021.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/motor.relay.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/aula-20.10.2021.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/motor.relay.tar *
 checkReturnCode
 
 # Cleanup

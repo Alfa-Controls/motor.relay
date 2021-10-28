@@ -1,3 +1,13 @@
+/**
+ * File:   TimeSystem.h
+ * Author: Cesar Daltoe Berci
+ *
+ * Created on October 20, 2021, 9:50 PM
+ * Last Review: October 20, 2021, 9:50 PM
+ * 
+ * @details
+ * Time system control implementation
+ */
 #include "TimeSystem.h"
 
 

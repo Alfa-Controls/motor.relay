@@ -1,0 +1,174 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F58 `(v ~T0 @X0 0 tf ]
+"29 ./TimeSystem.h
+[; ;./TimeSystem.h: 29:     typedef struct {
+[s S2 `uo 1 `*F58 1 ]
+[n S2 . currentTimeMillis incCurrentTimeMillis ]
+"18 Sensor.c
+[; ;Sensor.c: 18: void sensorTasks(Sensor * this, uint16_t meassure) {
+[c E34 0 1 2 .. ]
+[n E34 . MONITORING TEMPORIZED TRIP  ]
+[v F45 `(v ~T0 @X0 0 tf2`*S1`us ]
+"48 ./Sensor.h
+[; ;./Sensor.h: 48:     typedef struct SENSOR_TAG {
+[s S1 `E34 1 `us 1 `us 1 `us 1 `*F45 1 `us 1 `a 1 ]
+[n S1 SENSOR_TAG state triggerInst triggerTemp timeLimit tasks cronometer trip ]
+"54 ./TimeSystem.h
+[; ;./TimeSystem.h: 54:     TimeSystem * GetTimeSystemInstance(void);
+[v _GetTimeSystemInstance `(*S2 ~T0 @X0 0 ef ]
+"16 Sensor.c
+[; ;Sensor.c: 16: static TimeSystem * timer;
+[v _timer `*S2 ~T0 @X0 1 s ]
+"18
+[; ;Sensor.c: 18: void sensorTasks(Sensor * this, uint16_t meassure) {
+[v _sensorTasks `(v ~T0 @X0 1 ef2`*S1`us ]
+{
+[e :U _sensorTasks ]
+[v _this `*S1 ~T0 @X0 1 r1 ]
+[v _meassure `us ~T0 @X0 1 r2 ]
+[f ]
+"19
+[; ;Sensor.c: 19:     switch (this->state) {
+[e $U 5  ]
+{
+"20
+[; ;Sensor.c: 20:         case MONITORING:
+[e :U 6 ]
+"21
+[; ;Sensor.c: 21:             if (meassure > this->triggerInst) {
+[e $ ! > -> _meassure `ui -> . *U _this 1 `ui 7  ]
+{
+"22
+[; ;Sensor.c: 22:                 this->state = TRIP;
+[e = . *U _this 0 . `E34 2 ]
+"23
+[; ;Sensor.c: 23:                 this->trip = 1;
+[e = . *U _this 6 -> -> 1 `i `a ]
+"24
+[; ;Sensor.c: 24:                 break;
+[e $U 4  ]
+"25
+[; ;Sensor.c: 25:             } else if (meassure > this->triggerTemp) {
+}
+[e $U 8  ]
+[e :U 7 ]
+[e $ ! > -> _meassure `ui -> . *U _this 2 `ui 9  ]
+{
+"26
+[; ;Sensor.c: 26:                 this->state = TEMPORIZED;
+[e = . *U _this 0 . `E34 1 ]
+"27
+[; ;Sensor.c: 27:                 this->cronometer = timer->currentTimeMillis;
+[e = . *U _this 5 -> . *U _timer 0 `us ]
+"28
+[; ;Sensor.c: 28:                 break;
+[e $U 4  ]
+"29
+[; ;Sensor.c: 29:             }
+}
+[e :U 9 ]
+[e :U 8 ]
+"30
+[; ;Sensor.c: 30:             break;
+[e $U 4  ]
+"31
+[; ;Sensor.c: 31:         case TEMPORIZED:
+[e :U 10 ]
+"32
+[; ;Sensor.c: 32:             if ((timer->currentTimeMillis - this->cronometer) > this->timeLimit) {
+[e $ ! > - . *U _timer 0 -> . *U _this 5 `uo -> . *U _this 3 `uo 11  ]
+{
+"33
+[; ;Sensor.c: 33:                 this->state = TRIP;
+[e = . *U _this 0 . `E34 2 ]
+"34
+[; ;Sensor.c: 34:                 this->trip = 1;
+[e = . *U _this 6 -> -> 1 `i `a ]
+"35
+[; ;Sensor.c: 35:             } else if (meassure < this->triggerTemp) {
+}
+[e $U 12  ]
+[e :U 11 ]
+[e $ ! < -> _meassure `ui -> . *U _this 2 `ui 13  ]
+{
+"36
+[; ;Sensor.c: 36:                 this->trip = 0;
+[e = . *U _this 6 -> -> 0 `i `a ]
+"37
+[; ;Sensor.c: 37:                 this->state = MONITORING;
+[e = . *U _this 0 . `E34 0 ]
+"38
+[; ;Sensor.c: 38:             }
+}
+[e :U 13 ]
+[e :U 12 ]
+"39
+[; ;Sensor.c: 39:         case TRIP:
+[e :U 14 ]
+"40
+[; ;Sensor.c: 40:             if (meassure < this->triggerTemp) {
+[e $ ! < -> _meassure `ui -> . *U _this 2 `ui 15  ]
+{
+"41
+[; ;Sensor.c: 41:                 this->trip = 0;
+[e = . *U _this 6 -> -> 0 `i `a ]
+"42
+[; ;Sensor.c: 42:                 this->state = MONITORING;
+[e = . *U _this 0 . `E34 0 ]
+"43
+[; ;Sensor.c: 43:             }
+}
+[e :U 15 ]
+"44
+[; ;Sensor.c: 44:     }
+}
+[e $U 4  ]
+[e :U 5 ]
+[e [\ -> . *U _this 0 `ui , $ -> . `E34 0 `ui 6
+ , $ -> . `E34 1 `ui 10
+ , $ -> . `E34 2 `ui 14
+ 4 ]
+[e :U 4 ]
+"45
+[; ;Sensor.c: 45: }
+[e :UE 3 ]
+}
+"47
+[; ;Sensor.c: 47: Sensor NewSensor(uint16_t ti, uint16_t tt, uint16_t tl) {
+[v _NewSensor `(S1 ~T0 @X0 1 ef3`us`us`us ]
+{
+[e :U _NewSensor ]
+[v _ti `us ~T0 @X0 1 r1 ]
+[v _tt `us ~T0 @X0 1 r2 ]
+[v _tl `us ~T0 @X0 1 r3 ]
+[f ]
+"48
+[; ;Sensor.c: 48:     timer = GetTimeSystemInstance();
+[e = _timer ( _GetTimeSystemInstance ..  ]
+[v F69 `S1 ~T0 @X0 1 s ]
+[i F69
+:U ..
+:U ..
+"49
+[; ;Sensor.c: 49:     Sensor ss = {
+-> -> 0 `i `E34
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `*F45
+-> -> 0 `i `us
+-> -> 0 `i `a
+..
+..
+]
+[v _ss `S1 ~T0 @X0 1 a ]
+[e = _ss F69 ]
+[e ; = . _ss 0 . `E34 0 ; = . _ss 1 _ti ; = . _ss 2 _tt ; = . _ss 3 _tl ; = . _ss 4 &U _sensorTasks = . _ss 6 -> -> 0 `i `a ]
+"57
+[; ;Sensor.c: 57:     return ss;
+[e ) _ss ]
+[e $UE 16  ]
+"58
+[; ;Sensor.c: 58: }
+[e :UE 16 ]
+}

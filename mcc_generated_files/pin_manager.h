@@ -82,6 +82,23 @@
 #define TEMP_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
 #define TEMP_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
 
+// get/set CURRENT aliases
+#define CURRENT_TRIS                 TRISAbits.TRISA1
+#define CURRENT_LAT                  LATAbits.LATA1
+#define CURRENT_PORT                 PORTAbits.RA1
+#define CURRENT_WPU                  WPUAbits.WPUA1
+#define CURRENT_ANS                  ANSELAbits.ANSA1
+#define CURRENT_SetHigh()            do { LATAbits.LATA1 = 1; } while(0)
+#define CURRENT_SetLow()             do { LATAbits.LATA1 = 0; } while(0)
+#define CURRENT_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0)
+#define CURRENT_GetValue()           PORTAbits.RA1
+#define CURRENT_SetDigitalInput()    do { TRISAbits.TRISA1 = 1; } while(0)
+#define CURRENT_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)
+#define CURRENT_SetPullup()          do { WPUAbits.WPUA1 = 1; } while(0)
+#define CURRENT_ResetPullup()        do { WPUAbits.WPUA1 = 0; } while(0)
+#define CURRENT_SetAnalogMode()      do { ANSELAbits.ANSA1 = 1; } while(0)
+#define CURRENT_SetDigitalMode()     do { ANSELAbits.ANSA1 = 0; } while(0)
+
 // get/set RELAY aliases
 #define RELAY_TRIS                 TRISCbits.TRISC3
 #define RELAY_LAT                  LATCbits.LATC3

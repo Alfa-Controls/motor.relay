@@ -7,8 +7,9 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "TimeSystem.c" 2
+# 11 "TimeSystem.c"
 # 1 "./TimeSystem.h" 1
-# 18 "./TimeSystem.h"
+# 29 "./TimeSystem.h"
     typedef struct {
 
 
@@ -21,9 +22,9 @@
 
         void (*incCurrentTimeMillis)(void);
     }TimeSystem;
-# 43 "./TimeSystem.h"
+# 54 "./TimeSystem.h"
     TimeSystem * GetTimeSystemInstance(void);
-# 1 "TimeSystem.c" 2
+# 11 "TimeSystem.c" 2
 
 
 

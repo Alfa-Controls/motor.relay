@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\Aula-20.10.2021.X.production.hex">
+  <executable name="dist/default/production\motor.relay.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>578</used>
-      <free>7614</free>
+      <used>1085</used>
+      <free>7107</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>1024</length>
-      <used>42</used>
-      <free>982</free>
+      <used>129</used>
+      <free>895</free>
     </memory>
   </executable>
 </project>

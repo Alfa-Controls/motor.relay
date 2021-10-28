@@ -1,4 +1,4 @@
-# 1 "app.c"
+# 1 "ADCReader.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,36 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "app.c" 2
-# 14 "app.c"
-# 1 "./app.h" 1
-# 62 "./app.h"
-    void tasks(void);
-# 14 "app.c" 2
-
-# 1 "./TimeSystem.h" 1
-# 29 "./TimeSystem.h"
-    typedef struct {
-
-
-
-
-
-        unsigned long long currentTimeMillis;
-
-
-
-        void (*incCurrentTimeMillis)(void);
-    }TimeSystem;
-# 54 "./TimeSystem.h"
-    TimeSystem * GetTimeSystemInstance(void);
-# 15 "app.c" 2
-
-# 1 "./mcc_generated_files/tmr1.h" 1
-# 54 "./mcc_generated_files/tmr1.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdbool.h" 1 3
-# 54 "./mcc_generated_files/tmr1.h" 2
-
+# 1 "ADCReader.c" 2
+# 12 "ADCReader.c"
+# 1 "./ADCReader.h" 1
+# 24 "./ADCReader.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -140,34 +114,61 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdint.h" 2 3
-# 55 "./mcc_generated_files/tmr1.h" 2
-# 101 "./mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 130 "./mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 162 "./mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 197 "./mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 236 "./mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 272 "./mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 311 "./mcc_generated_files/tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 350 "./mcc_generated_files/tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 368 "./mcc_generated_files/tmr1.h"
-void TMR1_ISR(void);
-# 385 "./mcc_generated_files/tmr1.h"
-void TMR1_CallBack(void);
-# 403 "./mcc_generated_files/tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 421 "./mcc_generated_files/tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 439 "./mcc_generated_files/tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
-# 16 "app.c" 2
+# 24 "./ADCReader.h" 2
+
+
+
+
+
+    typedef enum {
+        ADC_READING_TEMP,
+        ADC_READING_CURRENT,
+    }ADCState;
+# 45 "./ADCReader.h"
+    typedef struct {
+        uint16_t temperature;
+        uint16_t current;
+# 59 "./ADCReader.h"
+        void (*read)(void);
+
+
+
+
+
+
+
+        void (*init)(void);
+        ADCState state;
+
+
+
+
+
+
+
+        uint16_t (*getResult)(void);
+
+
+
+
+
+
+
+        void (*setChannel)(uint8_t channel);
+
+
+
+
+
+
+
+        void (*startConversion)(void);
+        uint8_t tempChannel;
+        uint8_t ampChannel;
+    }ADCReader;
+# 113 "./ADCReader.h"
+    ADCReader * GetADCReaderInstance(uint16_t (*getResult)(void), void (*setChannel)(uint8_t channel), void (*start)(void), uint8_t teC, uint8_t amC);
+# 12 "ADCReader.c" 2
 
 # 1 "./mcc_generated_files/adc.h" 1
 # 54 "./mcc_generated_files/adc.h"
@@ -4217,6 +4218,10 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
 # 54 "./mcc_generated_files/adc.h" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdbool.h" 1 3
+# 56 "./mcc_generated_files/adc.h" 2
 # 72 "./mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
 
@@ -4259,147 +4264,43 @@ void ADC_ISR(void);
 extern void (*ADC_InterruptHandler)(void);
 # 387 "./mcc_generated_files/adc.h"
 void ADC_DefaultInterruptHandler(void);
-# 17 "app.c" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 129 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 141 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 18 "app.c" 2
-
-# 1 "./Sensor.h" 1
-# 28 "./Sensor.h"
-    typedef enum {
-        MONITORING,
-        TEMPORIZED,
-        TRIP,
-    }SensorState;
-# 48 "./Sensor.h"
-    typedef struct SENSOR_TAG {
-        SensorState state;
-        uint16_t triggerInst;
-        uint16_t triggerTemp;
-        uint16_t timeLimit;
-# 62 "./Sensor.h"
-        void (*tasks)(struct SENSOR_TAG * this, uint16_t meassure);
-        uint16_t cronometer;
-        _Bool trip;
-    } Sensor;
-# 75 "./Sensor.h"
-    Sensor NewSensor(uint16_t ti, uint16_t tt, uint16_t tl);
-# 19 "app.c" 2
-
-# 1 "./ADCReader.h" 1
-# 29 "./ADCReader.h"
-    typedef enum {
-        ADC_READING_TEMP,
-        ADC_READING_CURRENT,
-    }ADCState;
-# 45 "./ADCReader.h"
-    typedef struct {
-        uint16_t temperature;
-        uint16_t current;
-# 59 "./ADCReader.h"
-        void (*read)(void);
+# 13 "ADCReader.c" 2
 
 
+static void read(void);
+static void init(void);
 
+static ADCReader self = {
+    .read = read,
+    .init = init,
+};
 
+ADCReader * GetADCReaderInstance(uint16_t(*getResult)(void), void (*setChannel)(uint8_t channel), void (*start)(void), uint8_t teC, uint8_t amC) {
+    self.ampChannel = amC;
+    self.tempChannel = teC;
+    self.setChannel = setChannel;
+    self.getResult = getResult;
+    return &self;
+}
 
-
-
-        void (*init)(void);
-        ADCState state;
-
-
-
-
-
-
-
-        uint16_t (*getResult)(void);
-
-
-
-
-
-
-
-        void (*setChannel)(uint8_t channel);
-
-
-
-
-
-
-
-        void (*startConversion)(void);
-        uint8_t tempChannel;
-        uint8_t ampChannel;
-    }ADCReader;
-# 113 "./ADCReader.h"
-    ADCReader * GetADCReaderInstance(uint16_t (*getResult)(void), void (*setChannel)(uint8_t channel), void (*start)(void), uint8_t teC, uint8_t amC);
-# 20 "app.c" 2
-# 38 "app.c"
-typedef enum {
-    NOT_INIT,
-    MONITOR,
-    START_PULSE,
-    WAITING_PULSE,
-    WAITING_DEAD_TIME,
-} States;
-
-
-
-static States state = NOT_INIT;
-static TimeSystem * timer;
-static uint16_t cronometer;
-static _Bool isReadingTemp = 1;
-Sensor temperatureSensor;
-Sensor ampSensor;
-ADCReader * adc;
-# 66 "app.c"
-void tasks(void) {
-    switch (state) {
-        case NOT_INIT:
-            timer = GetTimeSystemInstance();
-            TMR1_SetInterruptHandler(timer->incCurrentTimeMillis);
-            temperatureSensor = NewSensor(800, 300, 400);
-            ampSensor = NewSensor(800, 600, 400);
-            adc = GetADCReaderInstance((uint16_t(*)(void)) ADC_GetConversionResult,
-                   (void (*)(uint8_t)) ADC_SelectChannel,
-                    ADC_StartConversion,
-                    (uint8_t) TEMP, (uint8_t) CURRENT
-            );
-            ADC_SetInterruptHandler(adc->read);
-            adc->init();
-            state = MONITOR;
+static void read(void) {
+    switch (self.state) {
+        case ADC_READING_TEMP:
+            self.temperature = self.getResult();
+            self.setChannel(self.ampChannel);
+            self.state = ADC_READING_CURRENT;
             break;
-        case MONITOR:
-            temperatureSensor.tasks(&temperatureSensor, adc->temperature);
-            ampSensor.tasks(&ampSensor, adc->current);
-            if (ampSensor.trip || temperatureSensor.trip)
-                state = START_PULSE;
-            break;
-        case START_PULSE:
-            cronometer = timer->currentTimeMillis;
-            do { LATCbits.LATC3 = 1; } while(0);
-            state = WAITING_PULSE;
-            break;
-        case WAITING_PULSE:
-            if ((timer->currentTimeMillis - cronometer) > 500) {
-                do { LATCbits.LATC3 = 0; } while(0);
-                state = WAITING_DEAD_TIME;
-                cronometer = timer->currentTimeMillis;
-            }
-            break;
-        case WAITING_DEAD_TIME:
-            if ((timer->currentTimeMillis - cronometer) > 500) {
-                do { LATCbits.LATC3 = 0; } while(0);
-                state = MONITOR;
-            }
+        case ADC_READING_CURRENT:
+            self.current = self.getResult();
+            self.setChannel(self.tempChannel);
+            self.state = ADC_READING_TEMP;
             break;
     }
+    self.startConversion();
+}
 
+static void init(void) {
+    self.setChannel(self.tempChannel);
+    self.state = ADC_READING_TEMP;
+    self.startConversion();
 }

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Aula-20.10.2021.X
+PROJECTNAME=motor.relay
 
 # Active Configuration
 DEFAULTCONF=default

@@ -1,31 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"129 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 129: void PIN_MANAGER_Initialize (void);
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"85 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 85: void OSCILLATOR_Initialize(void);
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"97
-[; ;mcc_generated_files/mcc.h: 97: void WDT_Initialize(void);
-[v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"101 mcc_generated_files/tmr1.h
-[; ;mcc_generated_files/tmr1.h: 101: void TMR1_Initialize(void);
-[v _TMR1_Initialize `(v ~T0 @X0 0 ef ]
-"137 mcc_generated_files/adc.h
-[; ;mcc_generated_files/adc.h: 137: void ADC_Initialize(void);
-[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
-"1612 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 1612: extern volatile unsigned char OSCCON __attribute__((address(0x099)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
-"1554
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 1554: extern volatile unsigned char OSCTUNE __attribute__((address(0x098)));
-[v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
-"2312
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 2312: extern volatile unsigned char BORCON __attribute__((address(0x116)));
-[v _BORCON `Vuc ~T0 @X0 0 e@278 ]
-"1495
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 1495: extern volatile unsigned char WDTCON __attribute__((address(0x097)));
-[v _WDTCON `Vuc ~T0 @X0 0 e@151 ]
+[v F42 `(v ~T0 @X0 0 tf ]
+[v F44 `(v ~T0 @X0 0 tf ]
+"18 ADCReader.c
+[; ;ADCReader.c: 18: static ADCReader self = {
+[c E34 0 1 .. ]
+[n E34 . ADC_READING_TEMP ADC_READING_CURRENT  ]
+[v F47 `(us ~T0 @X0 0 tf ]
+[v F49 `(v ~T0 @X0 0 tf1`uc ]
+[v F52 `(v ~T0 @X0 0 tf ]
+"45 ./ADCReader.h
+[; ;./ADCReader.h: 45:     typedef struct {
+[s S1 `us 1 `us 1 `*F42 1 `*F44 1 `E34 1 `*F47 1 `*F49 1 `*F52 1 `uc 1 `uc 1 ]
+[n S1 . temperature current read init state getResult setChannel startConversion tempChannel ampChannel ]
+"15 ADCReader.c
+[; ;ADCReader.c: 15: static void read(void);
+[v _read `(v ~T0 @X0 0 sf ]
+"16
+[; ;ADCReader.c: 16: static void init(void);
+[v _init `(v ~T0 @X0 0 sf ]
+[v F2412 `(us ~T0 @X0 0 tf ]
+[v F2413 `(v ~T0 @X0 0 tf1`uc ]
+[v F2415 `(v ~T0 @X0 0 tf ]
+[v F2417 `(us ~T0 @X0 0 tf ]
+[v F2419 `(v ~T0 @X0 0 tf1`uc ]
+[v F2422 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -464,66 +462,122 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6153
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1825.h: 6153: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"50 mcc_generated_files/mcc.c
-[; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"51
-[; ;mcc_generated_files/mcc.c: 51: {
+"18 ADCReader.c
+[; ;ADCReader.c: 18: static ADCReader self = {
+[v _self `S1 ~T0 @X0 1 s ]
+[i _self
+:U ..
+:U ..
+-> -> 0 `i `us
+-> -> 0 `i `us
+&U _read
+&U _init
+..
+..
+]
+"23
+[; ;ADCReader.c: 23: ADCReader * GetADCReaderInstance(uint16_t(*getResult)(void), void (*setChannel)(uint8_t channel), void (*start)(void), uint8_t teC, uint8_t amC) {
+[v _GetADCReaderInstance `(*S1 ~T0 @X0 1 ef5`*F2412`*F2413`*F2415`uc`uc ]
 {
-[e :U _SYSTEM_Initialize ]
+[e :U _GetADCReaderInstance ]
+[v _getResult `*F2417 ~T0 @X0 1 r1 ]
+[v _setChannel `*F2419 ~T0 @X0 1 r2 ]
+[v _start `*F2422 ~T0 @X0 1 r3 ]
+[v _teC `uc ~T0 @X0 1 r4 ]
+[v _amC `uc ~T0 @X0 1 r5 ]
 [f ]
-"53
-[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
-"54
-[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
-"55
-[; ;mcc_generated_files/mcc.c: 55:     WDT_Initialize();
-[e ( _WDT_Initialize ..  ]
-"56
-[; ;mcc_generated_files/mcc.c: 56:     TMR1_Initialize();
-[e ( _TMR1_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
-"58
-[; ;mcc_generated_files/mcc.c: 58: }
-[e :UE 329 ]
-}
-"60
-[; ;mcc_generated_files/mcc.c: 60: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"61
-[; ;mcc_generated_files/mcc.c: 61: {
-{
-[e :U _OSCILLATOR_Initialize ]
-[f ]
-"63
-[; ;mcc_generated_files/mcc.c: 63:     OSCCON = 0x72;
-[e = _OSCCON -> -> 114 `i `uc ]
-"65
-[; ;mcc_generated_files/mcc.c: 65:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
-"67
-[; ;mcc_generated_files/mcc.c: 67:     BORCON = 0x00;
-[e = _BORCON -> -> 0 `i `uc ]
-"68
-[; ;mcc_generated_files/mcc.c: 68: }
+"24
+[; ;ADCReader.c: 24:     self.ampChannel = amC;
+[e = . _self 9 _amC ]
+"25
+[; ;ADCReader.c: 25:     self.tempChannel = teC;
+[e = . _self 8 _teC ]
+"26
+[; ;ADCReader.c: 26:     self.setChannel = setChannel;
+[e = . _self 6 _setChannel ]
+"27
+[; ;ADCReader.c: 27:     self.getResult = getResult;
+[e = . _self 5 _getResult ]
+"28
+[; ;ADCReader.c: 28:     return &self;
+[e ) &U _self ]
+[e $UE 330  ]
+"29
+[; ;ADCReader.c: 29: }
 [e :UE 330 ]
 }
-"70
-[; ;mcc_generated_files/mcc.c: 70: void WDT_Initialize(void)
-[v _WDT_Initialize `(v ~T0 @X0 1 ef ]
-"71
-[; ;mcc_generated_files/mcc.c: 71: {
+"31
+[; ;ADCReader.c: 31: static void read(void) {
+[v _read `(v ~T0 @X0 1 sf ]
 {
-[e :U _WDT_Initialize ]
+[e :U _read ]
 [f ]
-"73
-[; ;mcc_generated_files/mcc.c: 73:     WDTCON = 0x16;
-[e = _WDTCON -> -> 22 `i `uc ]
-"74
-[; ;mcc_generated_files/mcc.c: 74: }
+"32
+[; ;ADCReader.c: 32:     switch (self.state) {
+[e $U 333  ]
+{
+"33
+[; ;ADCReader.c: 33:         case ADC_READING_TEMP:
+[e :U 334 ]
+"34
+[; ;ADCReader.c: 34:             self.temperature = self.getResult();
+[e = . _self 0 ( *U . _self 5 ..  ]
+"35
+[; ;ADCReader.c: 35:             self.setChannel(self.ampChannel);
+[e ( *U . _self 6 (1 . _self 9 ]
+"36
+[; ;ADCReader.c: 36:             self.state = ADC_READING_CURRENT;
+[e = . _self 4 . `E34 1 ]
+"37
+[; ;ADCReader.c: 37:             break;
+[e $U 332  ]
+"38
+[; ;ADCReader.c: 38:         case ADC_READING_CURRENT:
+[e :U 335 ]
+"39
+[; ;ADCReader.c: 39:             self.current = self.getResult();
+[e = . _self 1 ( *U . _self 5 ..  ]
+"40
+[; ;ADCReader.c: 40:             self.setChannel(self.tempChannel);
+[e ( *U . _self 6 (1 . _self 8 ]
+"41
+[; ;ADCReader.c: 41:             self.state = ADC_READING_TEMP;
+[e = . _self 4 . `E34 0 ]
+"42
+[; ;ADCReader.c: 42:             break;
+[e $U 332  ]
+"43
+[; ;ADCReader.c: 43:     }
+}
+[e $U 332  ]
+[e :U 333 ]
+[e [\ -> . _self 4 `ui , $ -> . `E34 0 `ui 334
+ , $ -> . `E34 1 `ui 335
+ 332 ]
+[e :U 332 ]
+"44
+[; ;ADCReader.c: 44:     self.startConversion();
+[e ( *U . _self 7 ..  ]
+"45
+[; ;ADCReader.c: 45: }
 [e :UE 331 ]
+}
+"47
+[; ;ADCReader.c: 47: static void init(void) {
+[v _init `(v ~T0 @X0 1 sf ]
+{
+[e :U _init ]
+[f ]
+"48
+[; ;ADCReader.c: 48:     self.setChannel(self.tempChannel);
+[e ( *U . _self 6 (1 . _self 8 ]
+"49
+[; ;ADCReader.c: 49:     self.state = ADC_READING_TEMP;
+[e = . _self 4 . `E34 0 ]
+"50
+[; ;ADCReader.c: 50:     self.startConversion();
+[e ( *U . _self 7 ..  ]
+"51
+[; ;ADCReader.c: 51: }
+[e :UE 336 ]
 }
